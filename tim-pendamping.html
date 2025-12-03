@@ -208,13 +208,13 @@
 
                     <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column">
                         <div class="flex-grow-1">
-                            <h4 class="fs-18 fw-semibold m-0">Kelola Data Tim Pendamping</h4>
+                            <h4 class="fs-18 fw-semibold m-0">Kelola Data Pendampingan</h4>
                         </div>
 
                         <div class="text-end">
                             <ol class="breadcrumb m-0 py-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Tim Pendamping</a></li>
-                                <li class="breadcrumb-item active">Kelola Data Tim Pendamping</li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Kelola Data Pendampingan</li>
                             </ol>
                         </div>
                     </div>
@@ -228,7 +228,7 @@
                                 </div>
                                 <button type="button" class="btn btn-primary " data-bs-toggle="modal"
                                     data-bs-target=".bs-example-modal-center"><i class="mdi mdi-plus me-2"></i>Tambah
-                                    Tim Pendamping</button>
+                                    Data Pendampingan</button>
                             </div>
                         </div>
 
@@ -240,7 +240,7 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
-                                                    <th scope="col">Kegiatan Pendampingan</th>
+                                                    <th scope="col" width="70%">Kegiatan Pendampingan</th>
                                                     <th scope="col">Status</th>
                                                     <th scope="col">Aksi</th>
                                                 </tr>
@@ -248,7 +248,8 @@
                                             <tbody>
                                                 <tr>
                                                     <th scope="row">1</th>
-                                                    <td>Identifikasi faktor risiko stunting pada keluarga</td>
+                                                    <td width="70%">Identifikasi faktor risiko stunting pada keluarga
+                                                    </td>
                                                     <!-- badge -->
                                                     <td><span class="badge bg-success">Active</span></td>
                                                     <td>
@@ -264,7 +265,8 @@
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">2</th>
-                                                    <td>Pemberian makanan tambahan (PMT) untuk bayi dan ibu hamil yang
+                                                    <td width="70%">Pemberian makanan tambahan (PMT) untuk bayi dan ibu
+                                                        hamil yang
                                                         kekurangan energi kronis (KEK)</td>
                                                     <!-- badge -->
                                                     <td><span class="badge bg-success">Active</span></td>
@@ -281,7 +283,26 @@
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">3</th>
-                                                    <td>Edukasi dan konseling</td>
+                                                    <td width="70%">Edukasi dan konseling</td>
+                                                    <!-- badge -->
+                                                    <td><span class="badge bg-success">Active</span></td>
+                                                    <td>
+                                                        <a href="#!" data-bs-toggle="modal"
+                                                            data-bs-target=".bs-example-modal-center-edit"
+                                                            class="btn btn-sm btn-primary" title="Edit Data">
+                                                            <i class="mdi mdi-pencil"></i>
+                                                        </a>
+                                                        <a href="#" class="btn btn-sm btn-danger" title="Hapus Data">
+                                                            <i class="mdi mdi-trash-can"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">4</th>
+                                                    <td width="70%">Memberikan informasi tentang pentingnya ANC (asupan
+                                                        gizi)
+                                                        berkualitas, suplementasi tablet tambah darah (TTD) dan asam
+                                                        folat, serta inisiasi menyusu dini.</td>
                                                     <!-- badge -->
                                                     <td><span class="badge bg-success">Active</span></td>
                                                     <td>
@@ -341,24 +362,6 @@
                                     <input type="text" class="form-control" id="timPendampingNama"
                                         placeholder="Masukkan Nama Kegiatan Pendampingan">
                                 </div>
-
-                                <div class="mb-3">
-                                    <label for="timPendampingEmail" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="timPendampingEmail"
-                                        placeholder="Masukkan Email">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="timPendampingHp" class="form-label">Hp/Telp</label>
-                                    <input type="text" class="form-control" id="timPendampingHp"
-                                        placeholder="Masukkan Hp/Telp">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="timPendampingAlamat" class="form-label">Alamat</label>
-                                    <textarea class="form-control" id="timPendampingAlamat" rows="3"
-                                        placeholder="Masukkan Alamat"></textarea>
-                                </div>
                                 <!-- Toogle switch active -->
                                 <div class="mb-3">
                                     <label class="form-label">Status</label>
@@ -383,34 +386,17 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">Edit Tim Pendamping</h5>
+                            <h5 class="modal-title">Edit Data Pendampingan</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                             </button>
                         </div>
                         <div class="modal-body">
                             <form>
                                 <div class="mb-3">
-                                    <label for="timPendampingNama" class="form-label">Edit Nama Tim Pendamping</label>
+                                    <label for="timPendampingNama" class="form-label">Edit Nama Kegiatan
+                                        Pendampingan</label>
                                     <input type="text" class="form-control" id="timPendampingNama"
-                                        placeholder="Masukkan Nama Tim Pendamping">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="timPendampingEmail" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="timPendampingEmail"
-                                        placeholder="Masukkan Email">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="timPendampingHp" class="form-label">Hp/Telp</label>
-                                    <input type="text" class="form-control" id="timPendampingHp"
-                                        placeholder="Masukkan Hp/Telp">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="timPendampingAlamat" class="form-label">Alamat</label>
-                                    <textarea class="form-control" id="timPendampingAlamat" rows="3"
-                                        placeholder="Masukkan Alamat"></textarea>
+                                        placeholder="Masukkan Nama Kegiatan Pendampingan">
                                 </div>
                                 <!-- Toogle switch active -->
                                 <div class="mb-3">
