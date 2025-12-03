@@ -222,7 +222,7 @@
                         </div>
                     </div>
                     <!-- Greeting for monitoring team -->
-                    <div class="row mt-4">
+                    <div class="row mt-2">
                         <div class="col-12">
                             <div class="card bg-light mb-3">
                                 <div class="card-body d-flex flex-column flex-md-row align-items-start gap-3">
@@ -238,7 +238,104 @@
                             <div class="ms-md-auto d-flex gap-2">
                                 <a href="create-pemantauan.html" class="btn btn-primary">Input Data</a>
                                 <a href="form-pemantauan.html" class="btn btn-outline-secondary">Lihat Hasil</a>
-                                <a href="statistik.html" class="btn btn-outline-info">Statistik</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Filters -->
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body d-flex flex-wrap gap-3 align-items-end">
+                                    <div style="min-width:140px;">
+                                        <label class="form-label mb-1">Tahun</label>
+                                        <select id="filter-tahun" class="form-select">
+                                            <option value="2025">2025</option>
+                                            <option value="2024">2024</option>
+                                            <option value="2023">2023</option>
+                                        </select>
+                                    </div>
+
+                                    <div style="min-width:200px;">
+                                        <label class="form-label mb-1">Kecamatan</label>
+                                        <select id="filter-kecamatan" class="form-select">
+                                            <option value="kec-a">Kecamatan A</option>
+                                            <option value="kec-b">Kecamatan B</option>
+                                            <option value="kec-c">Kecamatan C</option>
+                                        </select>
+                                    </div>
+
+                                    <div style="min-width:200px;">
+                                        <label class="form-label mb-1">Desa / Kelurahan</label>
+                                        <select id="filter-desa" class="form-select">
+                                            <option value="desa-1">Desa 1</option>
+                                            <option value="desa-2">Desa 2</option>
+                                            <option value="desa-3">Desa 3</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="ms-auto d-flex gap-2">
+                                        <button id="filter-apply" class="btn btn-primary">Apply</button>
+                                        <button id="filter-reset" class="btn btn-outline-secondary">Reset</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Statistik charts -->
+                    <div class="row mt-3">
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">CATIN - Distribusi Resiko</h5>
+                                    <div id="chart-catin-donut"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">BUMIL - Kunjungan per Bulan</h5>
+                                    <div id="chart-bumil-line"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">BULIN - Metode Kontrasepsi</h5>
+                                    <div id="chart-bulin-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Baduta - Kasus Pertumbuhan</h5>
+                                    <div id="chart-Baduta-area"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Baduta (Lingkungan) - Kondisi Lingkungan</h5>
+                                    <div id="chart-Baduta-stack"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">PUS - Kriteria PUS4</h5>
+                                    <div id="chart-pus-radar"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -281,6 +378,167 @@
 
     <!-- App js-->
     <script src="assets/js/app.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // CATIN - Donut (risk distribution)
+            var optionsCatin = {
+                series: [45, 35, 20],
+                chart: {
+                    type: 'donut',
+                    height: 300
+                },
+                labels: ['Rendah', 'Sedang', 'Tinggi'],
+                colors: ['#34c38f', '#f1b44c', '#f46a6a'],
+                legend: {
+                    position: 'bottom'
+                }
+            };
+            var chartCatin = new ApexCharts(document.querySelector('#chart-catin-donut'), optionsCatin);
+            chartCatin.render();
+
+            // BUMIL - Line (visits per month)
+            var optionsBumil = {
+                series: [{
+                    name: 'Kunjungan',
+                    data: [12, 18, 25, 22, 28, 30, 35, 40, 38, 45, 50, 55]
+                }],
+                chart: {
+                    type: 'line',
+                    height: 300,
+                    zoom: {
+                        enabled: false
+                    }
+                },
+                stroke: {
+                    width: 3
+                },
+                xaxis: {
+                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agt', 'Sep', 'Okt',
+                        'Nov', 'Des'
+                    ]
+                },
+                colors: ['#556ee6']
+            };
+            var chartBumil = new ApexCharts(document.querySelector('#chart-bumil-line'), optionsBumil);
+            chartBumil.render();
+
+            // BULIN - Bar (contraceptive methods)
+            var optionsBulin = {
+                series: [{
+                    name: 'Jumlah',
+                    data: [24, 18, 30, 12, 8]
+                }],
+                chart: {
+                    type: 'bar',
+                    height: 300
+                },
+                xaxis: {
+                    categories: ['Implant', 'Injeksi', 'Pil', 'IUD', 'Vasectomy']
+                },
+                colors: ['#50a5f1']
+            };
+            var chartBulin = new ApexCharts(document.querySelector('#chart-bulin-bar'), optionsBulin);
+            chartBulin.render();
+
+            // Baduta - Area (growth cases over months)
+            var optionsBaduta = {
+                series: [{
+                    name: 'Kasus Stunting',
+                    data: [5, 8, 6, 10, 9, 7, 11, 13, 9, 8, 6, 4]
+                }],
+                chart: {
+                    type: 'area',
+                    height: 300
+                },
+                xaxis: {
+                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agt', 'Sep', 'Okt',
+                        'Nov', 'Des'
+                    ]
+                },
+                colors: ['#34c38f']
+            };
+            var chartBaduta = new ApexCharts(document.querySelector('#chart-Baduta-area'), optionsBaduta);
+            chartBaduta.render();
+
+            // Baduta (Lingkungan) - Stacked bar (water/jamban)
+            var optionsBadutaStack = {
+                series: [{
+                        name: 'Air Layak',
+                        data: [30, 20, 25, 28, 22]
+                    },
+                    {
+                        name: 'Air Tidak',
+                        data: [10, 15, 8, 12, 18]
+                    },
+                    {
+                        name: 'Jamban Layak',
+                        data: [25, 22, 18, 20, 24]
+                    },
+                    {
+                        name: 'Jamban Tidak',
+                        data: [15, 18, 19, 10, 8]
+                    }
+                ],
+                chart: {
+                    type: 'bar',
+                    height: 320,
+                    stacked: true
+                },
+                xaxis: {
+                    categories: ['Dusun 1', 'Dusun 2', 'Dusun 3', 'Dusun 4', 'Dusun 5']
+                },
+                colors: ['#34c38f', '#f46a6a', '#50a5f1', '#f1b44c']
+            };
+            var chartBadutaStack = new ApexCharts(document.querySelector('#chart-Baduta-stack'),
+                optionsBadutaStack);
+            chartBadutaStack.render();
+
+            // PUS - Radar (PUS4 criteria counts)
+            var optionsPus = {
+                series: [{
+                    name: 'Jumlah',
+                    data: [12, 8, 15, 6]
+                }],
+                chart: {
+                    type: 'radar',
+                    height: 320
+                },
+                labels: ['Terlalu Muda', 'Terlalu Tua', 'Terlalu Dekat', 'Terlalu Banyak'],
+                colors: ['#556ee6']
+            };
+            var chartPus = new ApexCharts(document.querySelector('#chart-pus-radar'), optionsPus);
+            chartPus.render();
+
+            // Simple handlers for the filter UI (design-only)
+            var btnApply = document.getElementById('filter-apply');
+            var btnReset = document.getElementById('filter-reset');
+            var selTahun = document.getElementById('filter-tahun');
+            var selKec = document.getElementById('filter-kecamatan');
+            var selDesa = document.getElementById('filter-desa');
+
+            if (btnApply) {
+                btnApply.addEventListener('click', function () {
+                    var state = {
+                        tahun: selTahun ? selTahun.value : null,
+                        kecamatan: selKec ? selKec.value : null,
+                        desa: selDesa ? selDesa.value : null
+                    };
+                    console.log('Filter apply:', state);
+                    alert('Filter applied (design-only). Lihat console untuk nilai filter.');
+                });
+            }
+
+            if (btnReset) {
+                btnReset.addEventListener('click', function () {
+                    if (selTahun) selTahun.value = '2025';
+                    if (selKec) selKec.value = 'kec-a';
+                    if (selDesa) selDesa.value = 'desa-1';
+                    console.log('Filter reset to defaults');
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
