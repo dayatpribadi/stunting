@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Aplikasi Stunting</title>
+    <title>Log In | Silva - Responsive Admin Dashboard Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc." />
     <meta name="author" content="Zoyothemes" />
@@ -21,245 +21,106 @@
 
 </head>
 
-<!-- body start -->
+<body class="bg-primary-subtle">
+    <!-- Begin page -->
+    <div class="account-page">
+        <div class="container-fluid p-0">
+            <div class="row align-items-center g-0">
 
-<body data-menu-color="light" data-sidebar="default" data-layout-mode="light">
-    <div id="app-layout">
-        <!-- Topbar Start -->
-        <div class="topbar-custom">
-            <div class="container-fluid">
-                <div class="d-flex justify-content-between">
-                    <ul class="list-unstyled topnav-menu mb-0 d-flex align-items-center">
-                        <li>
-                            <button class="button-toggle-menu nav-link">
-                                <i data-feather="menu" class="noti-icon"></i>
-                            </button>
-                        </li>
-                    </ul>
-
-                    <ul class="list-unstyled topnav-menu mb-0 d-flex align-items-center">
-
-                        <li class="d-none d-lg-block">
-                            <div class="position-relative topbar-search">
-                                <input type="text" class="form-control bg-light bg-opacity-75 border-light ps-4"
-                                    placeholder="Search...">
-                                <i
-                                    class="mdi mdi-magnify fs-16 position-absolute text-muted top-50 translate-middle-y ms-2"></i>
-                            </div>
-                        </li>
-
-                        <li class="d-none d-sm-flex">
-                            <button type="button" class="btn nav-link" data-toggle="fullscreen">
-                                <i data-feather="maximize" class="align-middle fullscreen noti-icon"></i>
-                            </button>
-                        </li>
-
-                        <li class="dropdown notification-list topbar-dropdown">
-                            <a class="nav-link dropdown-toggle nav-user me-0" data-bs-toggle="dropdown" href="#"
-                                role="button" aria-haspopup="false" aria-expanded="false">
-                                <img src="assets/images/users/user-5.jpg" alt="user-image" class="rounded-circle">
-                                <span class="pro-user-name ms-1">
-                                    John Smith <i class="mdi mdi-chevron-down"></i>
-                                </span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
-                                <!-- item-->
-                                <a href="auth-logout.html" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-location-exit fs-16 align-middle"></i>
-                                    <span>Logout</span>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- end Topbar -->
-
-        <!-- Left Sidebar Start -->
-        <div class="app-sidebar-menu">
-            <div class="h-100" data-simplebar>
-
-                <!--- Sidemenu -->
-                <div id="sidebar-menu">
-
-                    <div class="logo-box">
-                        <a href="index.html" class="logo logo-light">
-                            <span class="logo-sm">
-                                <img src="assets/images/logo-sm.png" alt="" height="22">
-                            </span>
-                            <span class="logo-lg">
-                                <img src="assets/images/logo-light.png" alt="" height="24">
-                            </span>
-                        </a>
-                        <a href="index.html" class="logo logo-dark">
-                            <span class="logo-sm">
-                                <img src="assets/images/logo-sm.png" alt="" height="22">
-                            </span>
-                            <span class="logo-lg">
-                                <img src="assets/images/logo-dark.png" alt="" height="24">
-                            </span>
-                        </a>
-                    </div>
-
-                    <ul id="side-menu">
-
-                        <li class="menu-title">Menu</li>
-
-                        <li>
-                            <a href="index.html" class="tp-link">
-                                <i data-feather="home"></i>
-                                <span> Dashboard </span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="profil.html" class="tp-link">
-                                <i data-feather="users"></i>
-                                <span> Profil </span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#sidebarDashboards" data-bs-toggle="collapse">
-                                <i data-feather="package"></i>
-                                <span> Master Data </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarDashboards">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="user.html" class="tp-link">User</a>
-                                    </li>
-                                    <li>
-                                        <a href="tpk.html" class="tp-link">TPK</a>
-                                    </li>
-                                    <li>
-                                        <a href="kepala-balai.html" class="tp-link">Kepala Balai</a>
-                                    </li>
-                                    <li>
-                                        <a href="tim-pendamping.html" class="tp-link">Pendamping</a>
-                                    </li>
-                                    <li>
-                                        <a href="jenis-kontrasepsi.html" class="tp-link">Jenis Kontrasepsi</a>
-                                    </li>
-                                    <li>
-                                        <a href="bantuan.html" class="tp-link">Jenis Bantuan</a>
-                                    </li>
-                                    <li>
-                                        <a href="kategori.html" class="tp-link">Kategori</a>
-                                    </li>
-                                    <li>
-                                        <a href="wilayah.html" class="tp-link">Wilayah</a>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li class="menu-title mt-2">Data Pemantauan</li>
-
-                        <li>
-                            <a href="#sidebarTables" data-bs-toggle="collapse">
-                                <i data-feather="table"></i>
-                                <span>Pemantauan KRS</span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarTables">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="create-pemantauan.html" class="tp-link">Input Hasil Pemantauan</a>
-                                    </li>
-                                    <li>
-                                        <a href="form-pemantauan.html" class="tp-link">Contoh Single</a>
-                                    </li>
-                                    <li>
-                                        <a href="catin.html" class="tp-link">Data Catin</a>
-                                        <a href="bumil.html" class="tp-link">Data BUMIL</a>
-                                        <a href="bulin.html" class="tp-link">Data BULIN</a>
-                                        <a href="batuta.html" class="tp-link">Data Baduta</a>
-                                        <a href="balita.html" class="tp-link">Data Balita</a>
-                                        <a href="pus.html" class="tp-link">Data PUS</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="statistik.html" class="tp-link">
-                                <i data-feather="bar-chart-2"></i>
-                                <span> Statistik </span>
-                            </a>
-                        </li>
-                    </ul>
-
-                </div>
-                <!-- End Sidebar -->
-
-                <div class="clearfix"></div>
-
-            </div>
-        </div>
-        <!-- Left Sidebar End -->
-
-        <div class="content-page">
-
-            <!-- Start Content-->
-            <div class="content">
-                <div class="container-fluid">
+                <div class="col-xl-5">
                     <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box">
-                                <div class="row align-items-center">
-                                    <div class="col-sm-6">
-                                        <h4 class="page-title">Dashboard Aplikasi Stunting</h4>
-                                        <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item">Aplikasi Stunting<a href="#"
-                                                    class="text-muted"></a></li>
-                                            <li class="breadcrumb-item"><a href="javascript:void(0);"
-                                                    class="text-muted">Dashboard</a></li>
-                                        </ol>
+                        <div class="col-md-8 mx-auto">
+                            <div class="card p-3 mb-0">
+                                <div class="card-body">
+
+                                    <div class="mb-0 border-0 p-md-5 p-lg-0 p-4">
+                                        <div class="mb-4 p-0 text-center">
+                                            <a href="dashboard.html" class="auth-logo">
+                                                <img src="assets/images/logo-dark.png" alt="logo-dark" class="mx-auto"
+                                                    height="28" />
+                                            </a>
+                                        </div>
+
+                                        <div class="auth-title-section mb-3 text-center">
+                                            <h3 class="text-dark fs-20 fw-medium mb-2">Selamat Datang, </h3>
+                                            <p class="text-dark text-capitalize fs-14 mb-0">TIM Pendamping Keluarga</p>
+                                        </div>
+
+                                        <!-- tambahkan info -->
+                                        <p class="text-center text-muted mb-4 bg-light p-2 rounded">Isi Username
+                                            dan
+                                            Password Sembarang</p>
+
+                                        <div class="pt-0">
+                                            <form action="dashboard.html" class="my-4">
+                                                <div class="form-group mb-3">
+                                                    <label for="username" class="form-label">Nama Pengguna</label>
+                                                    <input class="form-control" type="text" id="username" required=""
+                                                        placeholder="Masukkan nama pengguna">
+                                                </div>
+
+                                                <div class="form-group mb-3">
+                                                    <label for="password" class="form-label">Kata Sandi</label>
+                                                    <input class="form-control" type="password" required=""
+                                                        id="password" placeholder="Masukkan kata sandi">
+                                                </div>
+
+                                                <div class="form-group d-flex mb-3">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input"
+                                                                id="checkbox-signin" checked>
+                                                            <label class="form-check-label"
+                                                                for="checkbox-signin">Remember me</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group mb-0 row">
+                                                    <div class="col-12">
+                                                        <div class="d-grid">
+                                                            <button class="btn btn-primary" type="submit"> Masuk
+                                                                Aplikasi
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+
+                                            <div class="text-center text-muted mb-4">
+                                                <!-- Copyright -->
+                                                <p class="mb-0">
+                                                    &copy; 2025 Developed by <i class="mdi mdi-heart text-danger"></i>
+                                                    Diskominfo Kab.
+                                                    Ogan Ilir
+                                                </p>
+                                            </div>
+
+                                        </div>
                                     </div>
+
                                 </div>
                             </div>
+
                         </div>
                     </div>
-                    <!-- Greeting for monitoring team -->
-                    <div class="row mt-4">
-                        <div class="col-12">
-                            <div class="card bg-light mb-3">
-                                <div class="card-body d-flex flex-column flex-md-row align-items-start gap-3">
-                                    <div>
-                                        <h5 class="card-title mb-1">Selamat datang, Tim Pemantau Desa/Kelurahan!</h5>
-                                        <p class="card-text mb-0">Terima kasih atas dedikasi Anda dalam memantau
-                                            keluarga berisiko stunting. Gunakan menu berikut untuk menambah hasil
-                                            pemantauan, melihat data, dan memantau statistik. Mohon pastikan data diisi
-                                            lengkap dan akurat untuk mendukung tindak lanjut yang tepat.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ms-md-auto d-flex gap-2">
-                                <a href="create-pemantauan.html" class="btn btn-primary">Input Data</a>
-                                <a href="form-pemantauan.html" class="btn btn-outline-secondary">Lihat Hasil</a>
-                                <a href="statistik.html" class="btn btn-outline-info">Statistik</a>
+                </div>
+
+                <div class="col-xl-7">
+                    <div class="account-page-bg p-md-5 p-4">
+                        <div class="text-center">
+                            <div class="auth-image">
+                                <img src="assets/images/auth-images.svg" class="mx-auto img-fluid" alt="images">
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
-            <!-- Footer Start -->
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col fs-13 text-muted text-center">
-                            &copy; <script>
-                                document.write(new Date().getFullYear())
-                            </script> - Developed <span class="mdi mdi-heart text-danger"></span> by <a href="#!"
-                                class="text-reset fw-semibold">Diskominfo Ogan Ilir</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-            <!-- end Footer -->
         </div>
     </div>
+
+    <!-- END wrapper -->
 
     <!-- Vendor -->
     <script src="assets/libs/jquery/jquery.min.js"></script>
@@ -270,17 +131,9 @@
     <script src="assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
     <script src="assets/libs/feather-icons/feather.min.js"></script>
 
-    <!-- Apexcharts JS -->
-    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
-
-    <!-- for basic area chart -->
-    <script src="https://apexcharts.com/samples/assets/stock-prices.js"></script>
-
-    <!-- Widgets Init Js -->
-    <script src="assets/js/pages/crm-dashboard.init.js"></script>
-
     <!-- App js-->
     <script src="assets/js/app.js"></script>
+
 </body>
 
 </html>
