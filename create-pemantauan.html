@@ -213,233 +213,918 @@
                             </div>
                         </div>
                     </div>
+                    <!-- FORM INPUT PEMANTAUAN -->
                     <div class="row mt-3">
                         <div class="col-xl-12">
                             <div class="card">
                                 <div class="card-body">
                                     <form id="form-pemantauan" class="row g-3">
-                                        <div class="col-12">
-                                            <label class="form-label">Kategori</label>
-                                            <select id="kategori" class="form-select">
-                                                <option value="CATIN">Calon Pengantin (CATIN)</option>
-                                                <option value="BUMIL">Ibu Hamil (BUMIL)</option>
-                                                <option value="BULIN">Ibu Bersalin (BULIN)</option>
-                                                <option value="Baduta">Baduta (Bayi &lt;2 Th)</option>
-                                                <option value="Balita">Balita (Bayi &lt;5 Th)</option>
-                                                <option value="PUS">PUS (Pasangan Usia Subur)</option>
-                                            </select>
-                                        </div>
-
-                                        <!-- Common fields -->
-                                        <div class="col-md-4 field-nik">
-                                            <label class="form-label">NIK</label>
-                                            <input type="text" class="form-control" placeholder="NIK">
-                                        </div>
-                                        <div class="col-md-4 field-nama">
-                                            <label class="form-label">Nama Sasaran</label>
-                                            <input type="text" class="form-control" placeholder="Nama">
-                                        </div>
-                                        <div class="col-md-4 field-nama-suami">
-                                            <label class="form-label">Nama Suami / Pasangan</label>
-                                            <input type="text" class="form-control" placeholder="(opsional)">
-                                        </div>
-
-                                        <div class="col-md-4 field-alamat">
-                                            <label class="form-label">Dusun / RW</label>
-                                            <input type="text" class="form-control" placeholder="Dusun / RW">
-                                        </div>
-                                        <div class="col-md-2 field-rt">
-                                            <label class="form-label">RT</label>
-                                            <input type="text" class="form-control" placeholder="RT">
-                                        </div>
-                                        <div class="col-md-2 field-no">
-                                            <label class="form-label">No. Rumah</label>
-                                            <input type="text" class="form-control" placeholder="Nomor">
-                                        </div>
-
-                                        <div class="col-12 field-uraian">
-                                            <label class="form-label">Uraian Keadaan Sasaran (Hasil Pemeriksaan
-                                                Kesehatan)</label>
-                                            <textarea class="form-control" rows="3"
-                                                placeholder="Ringkasan hasil pemeriksaan"></textarea>
-                                        </div>
-
-                                        <!-- Pemeriksaan -->
-                                        <div class="col-md-3 field-pemeriksaan">
-                                            <label class="form-label">Pemeriksaan - Layak</label>
-                                            <select class="form-select">
-                                                <option value="">Pilih...</option>
-                                                <option value="layak">Layak</option>
-                                                <option value="tidak">Tidak</option>
-                                            </select>
-                                        </div>
-
-                                        <!-- Lingkungan -->
-                                        <div class="col-md-3 field-air">
-                                            <label class="form-label">Sumber Air Minum</label>
-                                            <input type="text" class="form-control" placeholder="Contoh: PDAM / Sumur">
-                                        </div>
-                                        <div class="col-md-3 field-jamban">
-                                            <label class="form-label">Jamban</label>
-                                            <select class="form-select">
-                                                <option value="">Pilih...</option>
-                                                <option value="layak">Layak</option>
-                                                <option value="tidak">Tidak Layak</option>
-                                            </select>
-                                        </div>
-
-                                        <!-- Pendampingan -->
-                                        <div class="col-md-3 field-pendampingan">
-                                            <label class="form-label">Pendampingan Dilakukan</label>
-                                            <!-- Dropdown Data Pendampingan -->
-                                            <select class="form-select">
-                                                <option value="">Pilih...</option>
-                                                <option value="ya">Edukasi dan konseling</option>
-                                                <option value="tidak">Identifikasi faktor risiko stunting pada keluarga
-                                                </option>
-                                            </select>
-                                        </div>
-
-                                        <div class="col-md-3 field-resiko">
-                                            <label class="form-label">Resiko</label>
-                                            <select class="form-select">
-                                                <option>Rendah</option>
-                                                <option>Sedang</option>
-                                                <option>Tinggi</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="col-12 field-keterangan">
-                                            <label class="form-label">Keterangan</label>
-                                            <input type="text" class="form-control" placeholder="Keterangan / catatan">
-                                        </div>
-
-                                        <!-- Category specific sections (hidden by default) -->
-                                        <div id="section-BUMIL" class="category-section d-none">
-                                            <hr>
-                                            <h5>Data khusus BUMIL</h5>
-                                            <div class="row g-3">
-                                                <div class="col-md-6">
-                                                    <label class="form-label">Hari Pertama Haid Terakhir</label>
-                                                    <input type="date" class="form-control">
+                                        <!-- WAJIB PILIH Bulan Tahun Pemantauan, Kecamatan dan Kategori -->
+                                        <div class="card-header p-3 bg-primary rounded-top bg-opacity-10 mb-3">
+                                            <div class="row">
+                                                <div class="col-xl-4">
+                                                    <label class="form-label">Bulan dan Tahun Pemantauan</label>
+                                                    <div class="d-flex justify-content-between gap-2">
+                                                        <select id="bulan" class="form-select w-100">
+                                                            <option value="">Pilih Bulan...</option>
+                                                            <option value="01">Januari</option>
+                                                            <option value="02">Februari</option>
+                                                            <option value="03">Maret</option>
+                                                            <option value="04">April</option>
+                                                            <option value="05">Mei</option>
+                                                            <option value="06">Juni</option>
+                                                            <option value="07">Juli</option>
+                                                            <option value="08">Agustus</option>
+                                                            <option value="09">September</option>
+                                                            <option value="10">Oktober</option>
+                                                            <option value="11">November</option>
+                                                            <option value="12">Desember</option>
+                                                        </select>
+                                                        <select id="tahun" class="form-select w-100">
+                                                            <option value="">Pilih Tahun...</option>
+                                                            <option value="2022">2022</option>
+                                                            <option value="2023">2023</option>
+                                                            <option value="2024">2024</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <label class="form-label">Taksiran Persalinan</label>
-                                                    <input type="date" class="form-control">
+                                                <div class="col-xl-4">
+                                                    <!-- Kecamatan Pemantauan -->
+                                                    <label class="form-label">Kecamatan Pemantauan</label>
+                                                    <select id="kecamatan" class="form-select">
+                                                        <option value="">Pilih Kecamatan...</option>
+                                                        <option value="Kec A">Kecamatan A</option>
+                                                        <option value="Kec B">Kecamatan B</option>
+                                                    </select>
                                                 </div>
-                                            </div>
-                                        </div>
-
-                                        <div id="section-BULIN" class="category-section d-none">
-                                            <hr>
-                                            <h5>Data khusus BULIN</h5>
-                                            <div class="row g-3">
-                                                <div class="col-md-6">
-                                                    <label class="form-label">KB Pasca Persalinan (Jenis
-                                                        Kontrasepsi)</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Contoh: Implant / Injeksi">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label class="form-label">ASI Eksklusif</label>
-                                                    <select class="form-select">
-                                                        <option>YA</option>
-                                                        <option>TIDAK</option>
+                                                <div class="col-xl-4">
+                                                    <label class="form-label">Kategori</label>
+                                                    <select id="kategori" class="form-select">
+                                                        <option value="CATIN">Calon Pengantin (CATIN)</option>
+                                                        <option value="BUMIL">Ibu Hamil (BUMIL)</option>
+                                                        <option value="BULIN">Ibu Bersalin (BULIN)</option>
+                                                        <option value="Baduta">Baduta (Bayi &lt;2 Th)</option>
+                                                        <option value="Balita">Balita (Bayi &lt;5 Th)</option>
+                                                        <option value="PUS">PUS (Pasangan Usia Subur)</option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div id="section-Baduta" class="category-section d-none">
-                                            <hr>
-                                            <h5>Data khusus Baduta</h5>
-                                            <div class="row g-3">
-                                                <div class="col-md-4">
-                                                    <label class="form-label">Berat Lahir / Catatan</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="BB lahir / catatan">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label class="form-label">ASI Eksklusif</label>
-                                                    <select class="form-select">
-                                                        <option>YA</option>
-                                                        <option>TIDAK</option>
-                                                    </select>
+                                        <!-- FORM ISIAN DINAMIS MULAI COLLAPSE -->
+                                        <div id="dynamic-section" class="row g-3 d-none">
+                                            <div class="col-md-4 field-nik">
+                                                <label class="form-label">NIK</label>
+                                                <div class="input-group">
+                                                    <input id="input-nik" type="text" class="form-control"
+                                                        placeholder="Cari NIK dari database sidesi ...">
+                                                    <button class="btn btn-primary" type="button" id="btn-search-nik">
+                                                        <i class="mdi mdi-magnify"></i>
+                                                    </button>
                                                 </div>
                                             </div>
-                                        </div>
+                                            <div class="col-md-4 field-nama">
+                                                <label class="form-label">Nama Sasaran</label>
+                                                <input type="text" class="form-control" placeholder="Nama" disabled>
+                                            </div>
+                                            <div class="col-md-4 field-nama-suami">
+                                                <label class="form-label">Nama Suami / Pasangan</label>
+                                                <input type="text" class="form-control" placeholder="(opsional)"
+                                                    disabled>
+                                            </div>
 
-                                        <div id="section-PUS" class="category-section d-none">
-                                            <hr>
-                                            <h5>Data khusus PUS</h5>
-                                            <div class="row g-3">
-                                                <div class="col-md-3">
-                                                    <label class="form-label">Status Kepesertaan KB</label>
-                                                    <select class="form-select">
-                                                        <option>YA</option>
-                                                        <option>TIDAK</option>
-                                                    </select>
+                                            <div class="col-md-4 field-alamat">
+                                                <label class="form-label">Dusun / RW</label>
+                                                <input type="text" class="form-control" placeholder="Dusun / RW"
+                                                    disabled>
+                                            </div>
+                                            <div class="col-md-2 field-rt">
+                                                <label class="form-label">RT</label>
+                                                <input type="text" class="form-control" placeholder="RT" disabled>
+                                            </div>
+                                            <div class="col-md-2 field-no">
+                                                <label class="form-label">No. Rumah</label>
+                                                <input type="text" class="form-control" placeholder="Nomor" disabled>
+                                            </div>
+
+                                            <div class="col-12 field-uraian">
+                                                <label class="form-label">Uraian Keadaan Sasaran (Hasil Pemeriksaan
+                                                    Kesehatan)</label>
+                                                <textarea class="form-control" rows="3"
+                                                    placeholder="Ringkasan hasil pemeriksaan"></textarea>
+                                            </div>
+
+                                            <!-- Pemeriksaan -->
+                                            <div class="col-md-3 field-pemeriksaan">
+                                                <label class="form-label">Pemeriksaan - Layak</label>
+                                                <select class="form-select">
+                                                    <option value="">Pilih...</option>
+                                                    <option value="layak">Layak</option>
+                                                    <option value="tidak">Tidak</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- Lingkungan -->
+                                            <div class="col-md-3 field-air">
+                                                <label class="form-label">Sumber Air Minum</label>
+                                                <input type="text" class="form-control"
+                                                    placeholder="Contoh: PDAM / Sumur">
+                                            </div>
+                                            <div class="col-md-3 field-jamban">
+                                                <label class="form-label">Jamban</label>
+                                                <select class="form-select">
+                                                    <option value="">Pilih...</option>
+                                                    <option value="layak">Layak</option>
+                                                    <option value="tidak">Tidak Layak</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- Pendampingan -->
+                                            <div class="col-md-3 field-pendampingan">
+                                                <label class="form-label">Pendampingan Dilakukan</label>
+                                                <!-- Dropdown Data Pendampingan -->
+                                                <select class="form-select">
+                                                    <option value="">Pilih...</option>
+                                                    <option value="ya">Edukasi dan konseling</option>
+                                                    <option value="tidak">Identifikasi faktor risiko stunting pada
+                                                        keluarga
+                                                    </option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-3 field-resiko">
+                                                <label class="form-label">Resiko</label>
+                                                <select class="form-select">
+                                                    <option>Rendah</option>
+                                                    <option>Sedang</option>
+                                                    <option>Tinggi</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-12 field-keterangan">
+                                                <label class="form-label">Keterangan</label>
+                                                <input type="text" class="form-control"
+                                                    placeholder="Keterangan / catatan">
+                                            </div>
+
+                                            <!-- Category specific sections (hidden by default) -->
+                                            <div id="section-BUMIL" class="category-section d-none">
+                                                <hr>
+                                                <h5>Data khusus BUMIL</h5>
+                                                <div class="row g-3">
+                                                    <div class="col-md-6">
+                                                        <label class="form-label">Hari Pertama Haid Terakhir</label>
+                                                        <input type="date" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="form-label">Taksiran Persalinan</label>
+                                                        <input type="date" class="form-control">
+                                                    </div>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <label class="form-label">Metode Kontrasepsi</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Contoh: Implant">
+                                            </div>
+
+                                            <div id="section-BULIN" class="category-section d-none">
+                                                <hr>
+                                                <h5>Data khusus BULIN</h5>
+                                                <div class="row g-3">
+                                                    <div class="col-md-6">
+                                                        <label class="form-label">KB Pasca Persalinan (Jenis
+                                                            Kontrasepsi)</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Contoh: Implant / Injeksi">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="form-label">ASI Eksklusif</label>
+                                                        <select class="form-select">
+                                                            <option>YA</option>
+                                                            <option>TIDAK</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <label class="form-label">Kepesertaan JKN PBI</label>
-                                                    <select class="form-select">
-                                                        <option>YA</option>
-                                                        <option>TIDAK</option>
-                                                    </select>
+                                            </div>
+
+                                            <div id="section-Baduta" class="category-section d-none">
+                                                <hr>
+                                                <h5>Data khusus Baduta</h5>
+                                                <div class="row g-3">
+                                                    <div class="col-md-4">
+                                                        <label class="form-label">Berat Lahir / Catatan</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="BB lahir / catatan">
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label class="form-label">ASI Eksklusif</label>
+                                                        <select class="form-select">
+                                                            <option>YA</option>
+                                                            <option>TIDAK</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <label class="form-label">Bantuan Sosial (Jenis)</label>
-                                                    <input type="text" class="form-control" placeholder="Contoh: BPNT">
-                                                </div>
-                                                <div class="col-12">
-                                                    <label class="form-label">PUS 4 - Risiko Spesifik</label>
-                                                    <div class="d-flex flex-wrap gap-2">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                id="pus_muda">
-                                                            <label class="form-check-label" for="pus_muda">Terlalu muda
-                                                                (&lt;20)</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                id="pus_tua">
-                                                            <label class="form-check-label" for="pus_tua">Terlalu tua
-                                                                (35-40)</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                id="pus_dekat">
-                                                            <label class="form-check-label" for="pus_dekat">Terlalu
-                                                                dekat (&lt;2 th)</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                id="pus_banyak">
-                                                            <label class="form-check-label" for="pus_banyak">Terlalu
-                                                                banyak (>=3 anak)</label>
+                                            </div>
+
+                                            <div id="section-PUS" class="category-section d-none">
+                                                <hr>
+                                                <h5>Data khusus PUS</h5>
+                                                <div class="row g-3">
+                                                    <div class="col-md-3">
+                                                        <label class="form-label">Status Kepesertaan KB</label>
+                                                        <select class="form-select">
+                                                            <option>YA</option>
+                                                            <option>TIDAK</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label">Metode Kontrasepsi</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Contoh: Implant">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label">Kepesertaan JKN PBI</label>
+                                                        <select class="form-select">
+                                                            <option>YA</option>
+                                                            <option>TIDAK</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="form-label">Bantuan Sosial (Jenis)</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Contoh: BPNT">
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <label class="form-label">PUS 4 - Risiko Spesifik</label>
+                                                        <div class="d-flex flex-wrap gap-2">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="pus_muda">
+                                                                <label class="form-check-label" for="pus_muda">Terlalu
+                                                                    muda
+                                                                    (&lt;20)</label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="pus_tua">
+                                                                <label class="form-check-label" for="pus_tua">Terlalu
+                                                                    tua
+                                                                    (35-40)</label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="pus_dekat">
+                                                                <label class="form-check-label" for="pus_dekat">Terlalu
+                                                                    dekat (&lt;2 th)</label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="pus_banyak">
+                                                                <label class="form-check-label" for="pus_banyak">Terlalu
+                                                                    banyak (>=3 anak)</label>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <div class="d-flex justify-content-end gap-2">
-                                                <a href="form-pemantauan.html" class="btn btn-secondary">Batal</a>
-                                                <button type="button" id="btn-simpan-design"
-                                                    class="btn btn-primary">Simpan (Design)</button>
+                                            <!-- FORM ISIAN DINAMIS AKHIR -->
+                                            <div class="col-12">
+                                                <div class="d-flex justify-content-end gap-2">
+                                                    <a href="form-pemantauan.html" class="btn btn-secondary">Batal</a>
+                                                    <button type="button" id="btn-simpan-design"
+                                                        class="btn btn-primary">Simpan Data</button>
+                                                </div>
                                             </div>
                                         </div>
+
                                     </form>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-xl-12 d-none" id="table-kosong">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="text-center py-5">
+                                        <i class="mdi mdi-database-remove-outline fs-1 text-muted mb-3"></i>
+                                        <h5 class="mb-2">Data Tidak Ditemukan</h5>
+                                        <p class="text-muted mb-4">Silakan sesuaikan filter pencarian Anda dan coba
+                                            lagi.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- TABEL CATIN -->
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card d-none" id="table-CATIN">
+                                <div class="card-body">
+                                    <h6 class="fw-semibold mb-3">Data Hasil Inputan Pemantauan Catin</h6>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover mb-0">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th rowspan="2" class="align-middle text-center">NO</th>
+                                                    <th rowspan="2" class="align-middle">NIK</th>
+                                                    <th rowspan="2" class="align-middle">NAMA SASARAN</th>
+                                                    <th colspan="3" class="text-center">ALAMAT</th>
+                                                    <th colspan="2" class="text-center">PEMERIKSAAN
+                                                        KESEHATAN/ELSIMIL</th>
+                                                    <th colspan="2" class="text-center">LINGKUNGAN</th>
+                                                    <th colspan="2" class="text-center">PENDAMPINGAN YANG
+                                                        DILAKUKAN</th>
+                                                    <th rowspan="2" class="align-middle text-center">RESIKO</th>
+                                                    <th rowspan="2" class="align-middle text-center">KETERANGAN
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center">DUSUN/RW</th>
+                                                    <th class="text-center">RT</th>
+                                                    <th class="text-center">NOMOR</th>
+                                                    <th class="text-center">LAYAK</th>
+                                                    <th class="text-center">TIDAK</th>
+                                                    <th class="text-center">SUMBER AIR</th>
+                                                    <th class="text-center">JAMBAN</th>
+                                                    <th class="text-center">YA</th>
+                                                    <th class="text-center">TIDAK</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td>3272012345678901</td>
+                                                    <td>Ahmad</td>
+                                                    <td>Dusun Sukamaju / RW 01</td>
+                                                    <td class="text-center">02</td>
+                                                    <td class="text-center">12</td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td>PDAM</td>
+                                                    <td>Layak</td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">Rendah</td>
+                                                    <td>Contoh catatan</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td>3272098765432109</td>
+                                                    <td>Siti</td>
+                                                    <td>Dusun Melati / RW 02</td>
+                                                    <td class="text-center">05</td>
+                                                    <td class="text-center">08</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td>Sumur</td>
+                                                    <td>Tidak Layak</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center">Tinggi</td>
+                                                    <td>Perlu tindak lanjut</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- Pagination -->
+                                    <div class="d-flex justify-content-end mt-3">
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination pagination-sm">
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#" tabindex="-1"
+                                                        aria-disabled="true">Previous</a>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#">Next</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TABEL BUMIL -->
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card d-none" id="table-BUMIL">
+                                <div class="card-body">
+                                    <h6 class="fw-semibold mb-3">Data Hasil Inputan Pemantauan Bumil</h6>
+                                    <div class="table-responsive">
+                                        <!-- BUMIL table (Tab 2) -->
+                                        <table class="table table-bordered table-hover mb-0">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th rowspan="2" class="align-middle text-center">NO</th>
+                                                    <th rowspan="2" class="align-middle">NIK</th>
+                                                    <th rowspan="2" class="align-middle">NAMA SASARAN</th>
+                                                    <th rowspan="2" class="align-middle">NAMA SUAMI</th>
+                                                    <th rowspan="2" class="align-middle">ALAMAT</th>
+                                                    <th rowspan="2" class="align-middle">URAIAN KEADAAN
+                                                        SASARAN<br />(HASIL PEMERIKSAAN KESEHATAN)</th>
+                                                    <th rowspan="2" class="align-middle">HARI PERTAMA HAID
+                                                        TERAKHIR</th>
+                                                    <th rowspan="2" class="align-middle">TAKSIRAN PERSALIAN</th>
+                                                    <th colspan="4" class="text-center">LINGKUNGAN</th>
+                                                    <th colspan="2" class="text-center">PENDAMPINGAN YANG
+                                                        DILAKUKAN</th>
+                                                    <th rowspan="2" class="align-middle text-center">RESIKO</th>
+                                                    <th rowspan="2" class="align-middle text-center">KETERANGAN
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center">SUMBER AIR<br />LAYAK</th>
+                                                    <th class="text-center">SUMBER AIR<br />TIDAK</th>
+                                                    <th class="text-center">JAMBAN<br />LAYAK</th>
+                                                    <th class="text-center">JAMBAN<br />TIDAK</th>
+                                                    <th class="text-center">YA</th>
+                                                    <th class="text-center">TIDAK</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td>3272011122233344</td>
+                                                    <td>Nur</td>
+                                                    <td>Budi</td>
+                                                    <td>Dusun Melati / RW 03</td>
+                                                    <td>HB: Normal, Tekanan OK</td>
+                                                    <td>2025-10-05</td>
+                                                    <td>2026-07-12</td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">Rendah</td>
+                                                    <td>Catatan pemeriksaan</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td>3272019988776655</td>
+                                                    <td>Rina</td>
+                                                    <td>Andi</td>
+                                                    <td>Dusun Karet / RW 04</td>
+                                                    <td>Anemia ringan, rujuk konseling gizi</td>
+                                                    <td>2025-11-20</td>
+                                                    <td>2026-08-30</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center">Tinggi</td>
+                                                    <td>Perlu tindak lanjut</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- Pagination -->
+                                    <div class="d-flex justify-content-end mt-3">
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination pagination-sm">
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#" tabindex="-1"
+                                                        aria-disabled="true">Previous</a>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#">Next</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TABEL BULIN -->
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card d-none" id="table-BULIN">
+                                <div class="card-body">
+                                    <h6 class="fw-semibold mb-3">Data Hasil Inputan Pemantauan Bulin</h6>
+                                    <div class="table-responsive">
+                                        <!-- BULIN table (Tab 3) -->
+                                        <table class="table table-bordered table-hover mb-0">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th class="align-middle text-center">NO</th>
+                                                    <th class="align-middle">NIK</th>
+                                                    <th class="align-middle">NAMA SASARAN</th>
+                                                    <th class="align-middle">NAMA SUAMI</th>
+                                                    <th class="align-middle">ALAMAT</th>
+                                                    <th class="align-middle">URAIAN KEADAAN SASARAN<br />(HASIL
+                                                        PEMERIKSAAN KESEHATAN)</th>
+                                                    <th class="align-middle">KB PASCA PERSALINAN<br />(JENIS
+                                                        KONTRASEPSI)</th>
+                                                    <th class="align-middle text-center">ASI EKSKLUSIF</th>
+                                                    <th colspan="4" class="text-center">LINGKUNGAN</th>
+                                                    <th colspan="2" class="text-center">PENDAMPINGAN YANG
+                                                        DILAKUKAN</th>
+                                                    <th class="align-middle text-center">RESIKO</th>
+                                                    <th class="align-middle text-center">KETERANGAN</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="d-none"></th>
+                                                    <th class="d-none"></th>
+                                                    <th class="d-none"></th>
+                                                    <th class="d-none"></th>
+                                                    <th class="d-none"></th>
+                                                    <th class="d-none"></th>
+                                                    <th class="d-none"></th>
+                                                    <th class="d-none"></th>
+                                                    <th class="text-center">SUMBER AIR<br />LAYAK</th>
+                                                    <th class="text-center">SUMBER AIR<br />TIDAK</th>
+                                                    <th class="text-center">JAMBAN<br />LAYAK</th>
+                                                    <th class="text-center">JAMBAN<br />TIDAK</th>
+                                                    <th class="text-center">YA</th>
+                                                    <th class="text-center">TIDAK</th>
+                                                    <th class="d-none"></th>
+                                                    <th class="d-none"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td>3272001112223334</td>
+                                                    <td>Melati</td>
+                                                    <td>Dedi</td>
+                                                    <td>Dusun Kecil / RW 05</td>
+                                                    <td>Persalinan normal, kondisi ibu stabil</td>
+                                                    <td>Implant</td>
+                                                    <td class="text-center">YA</td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">Rendah</td>
+                                                    <td>Kontrol 1 minggu</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td>3272005544332211</td>
+                                                    <td>Wulan</td>
+                                                    <td>Slamet</td>
+                                                    <td>Dusun Hijau / RW 06</td>
+                                                    <td>Caesaria, butuh pemantauan luka</td>
+                                                    <td>Injeksi</td>
+                                                    <td class="text-center">TIDAK</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center">Tinggi</td>
+                                                    <td>Rujuk ke puskesmas</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- Pagination -->
+                                    <div class="d-flex justify-content-end mt-3">
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination pagination-sm">
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#" tabindex="-1"
+                                                        aria-disabled="true">Previous</a>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#">Next</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TABEL BADUTA -->
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card d-none" id="table-BADUTA">
+                                <div class="card-body">
+                                    <h6 class="fw-semibold mb-3">Data Hasil Inputan Pemantauan Baduta</h6>
+                                    <div class="table-responsive">
+                                        <!-- Baduta table (Tab 4) -->
+                                        <table class="table table-bordered table-hover mb-0">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th class="align-middle text-center">NO</th>
+                                                    <th class="align-middle">NIK</th>
+                                                    <th class="align-middle">NAMA SASARAN</th>
+                                                    <th class="align-middle">NAMA SUAMI</th>
+                                                    <th class="align-middle">ALAMAT</th>
+                                                    <th class="align-middle">URAIAN KEADAAN SASARAN<br />(HASIL
+                                                        PEMERIKSAAN KESEHATAN)</th>
+                                                    <th class="align-middle">KB PASCA PERSALINAN<br />(JENIS
+                                                        KONTRASEPSI)</th>
+                                                    <th class="align-middle text-center">ASI EKSKLUSIF</th>
+                                                    <th colspan="4" class="text-center">LINGKUNGAN</th>
+                                                    <th colspan="2" class="text-center">PENDAMPINGAN YANG
+                                                        DILAKUKAN</th>
+                                                    <th class="align-middle text-center">RESIKO</th>
+                                                    <th class="align-middle text-center">KETERANGAN</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="d-none"></th>
+                                                    <th class="d-none"></th>
+                                                    <th class="d-none"></th>
+                                                    <th class="d-none"></th>
+                                                    <th class="d-none"></th>
+                                                    <th class="d-none"></th>
+                                                    <th class="d-none"></th>
+                                                    <th class="d-none"></th>
+                                                    <th class="text-center">SUMBER AIR<br />LAYAK</th>
+                                                    <th class="text-center">SUMBER AIR<br />TIDAK</th>
+                                                    <th class="text-center">JAMBAN<br />LAYAK</th>
+                                                    <th class="text-center">JAMBAN<br />TIDAK</th>
+                                                    <th class="text-center">YA</th>
+                                                    <th class="text-center">TIDAK</th>
+                                                    <th class="d-none"></th>
+                                                    <th class="d-none"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td>3272002233445566</td>
+                                                    <td>Bayu</td>
+                                                    <td>-</td>
+                                                    <td>Dusun Anyelir / RW 07</td>
+                                                    <td>BB lahir 3.0 kg, kondisi stabil</td>
+                                                    <td>-</td>
+                                                    <td class="text-center">YA</td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">Rendah</td>
+                                                    <td>Kontrol imunisasi</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td>3272006677889900</td>
+                                                    <td>Mila</td>
+                                                    <td>-</td>
+                                                    <td>Dusun Kencana / RW 08</td>
+                                                    <td>BB lahir 2.4 kg, observasi gizi</td>
+                                                    <td>-</td>
+                                                    <td class="text-center">TIDAK</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center">Tinggi</td>
+                                                    <td>Rujuk ke posyandu</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- Pagination -->
+                                    <div class="d-flex justify-content-end mt-3">
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination pagination-sm">
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#" tabindex="-1"
+                                                        aria-disabled="true">Previous</a>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#">Next</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TABEL BALITA -->
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card d-none" id="table-BALITA">
+                                <div class="card-body">
+                                    <h6 class="fw-semibold mb-3">Data Hasil Inputan Pemantauan Balita</h6>
+                                    <div class="table-responsive">
+                                        <!-- Baduta (Lingkungan) table (Tab 5) -->
+                                        <table class="table table-bordered table-hover mb-0">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th rowspan="2" class="align-middle text-center">NO</th>
+                                                    <th rowspan="2" class="align-middle">NIK</th>
+                                                    <th rowspan="2" class="align-middle">NAMA SASARAN</th>
+                                                    <th rowspan="2" class="align-middle">NAMA SUAMI</th>
+                                                    <th rowspan="2" class="align-middle">ALAMAT</th>
+                                                    <th rowspan="2" class="align-middle">URAIAN KEADAAN
+                                                        SASARAN<br />(HASIL PEMERIKSAAN KESEHATAN)</th>
+                                                    <th colspan="4" class="text-center">LINGKUNGAN</th>
+                                                    <th colspan="2" class="text-center">PENDAMPINGAN YANG
+                                                        DILAKUKAN</th>
+                                                    <th rowspan="2" class="align-middle text-center">RESIKO</th>
+                                                    <th rowspan="2" class="align-middle text-center">KETERANGAN
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center">SUMBER AIR<br />LAYAK</th>
+                                                    <th class="text-center">SUMBER AIR<br />TIDAK</th>
+                                                    <th class="text-center">JAMBAN<br />LAYAK</th>
+                                                    <th class="text-center">JAMBAN<br />TIDAK</th>
+                                                    <th class="text-center">YA</th>
+                                                    <th class="text-center">TIDAK</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td>3272003344556677</td>
+                                                    <td>Rafi</td>
+                                                    <td>-</td>
+                                                    <td>Dusun Teratai / RW 09</td>
+                                                    <td>BB 3.1 kg, tumbuh sesuai</td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">Rendah</td>
+                                                    <td>Kontrol posyandu</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td>3272008899001122</td>
+                                                    <td>Lola</td>
+                                                    <td>-</td>
+                                                    <td>Dusun Kenanga / RW 10</td>
+                                                    <td>BB 2.5 kg, pemantauan nutrisi</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center">Tinggi</td>
+                                                    <td>Rujuk gizi</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- Pagination -->
+                                    <div class="d-flex justify-content-end mt-3">
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination pagination-sm">
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#" tabindex="-1"
+                                                        aria-disabled="true">Previous</a>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#">Next</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TABEL PUS -->
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card d-none" id="table-PUS">
+                                <div class="card-body">
+                                    <h6 class="fw-semibold mb-3">Data Hasil Inputan Pemantauan PUS</h6>
+                                    <div class="table-responsive">
+                                        <!-- PUS table (Tab PUS) -->
+                                        <table class="table table-bordered table-hover mb-0">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th rowspan="2" class="align-middle text-center">NO</th>
+                                                    <th rowspan="2" class="align-middle">NIK</th>
+                                                    <th rowspan="2" class="align-middle">NAMA SUAMI</th>
+                                                    <th rowspan="2" class="align-middle">NAMA ISTRI</th>
+                                                    <th rowspan="2" class="align-middle">ALAMAT</th>
+                                                    <th colspan="2" class="text-center">STATUS KEPESERTAAN KB
+                                                    </th>
+                                                    <th rowspan="2" class="align-middle">METODE KONTRASEPSI</th>
+                                                    <th colspan="2" class="text-center">KEPESERTAAN JKN PBI</th>
+                                                    <th colspan="2" class="text-center">BANTUAN SOSIAL</th>
+                                                    <th colspan="4" class="text-center">LINGKUNGAN</th>
+                                                    <th colspan="4" class="text-center">PUS 4 TERLALU</th>
+                                                    <th rowspan="2" class="align-middle text-center">RESIKO</th>
+                                                    <th rowspan="2" class="align-middle text-center">KETERANGAN
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center">YA</th>
+                                                    <th class="text-center">TIDAK</th>
+                                                    <th class="text-center">YA</th>
+                                                    <th class="text-center">TIDAK</th>
+                                                    <th class="text-center">YA</th>
+                                                    <th class="text-center">TIDAK</th>
+                                                    <th class="text-center">SUMBER AIR<br />LAYAK</th>
+                                                    <th class="text-center">SUMBER AIR<br />TIDAK</th>
+                                                    <th class="text-center">JAMBAN<br />LAYAK</th>
+                                                    <th class="text-center">JAMBAN<br />TIDAK</th>
+                                                    <th class="text-center">TERLALU MUDA</th>
+                                                    <th class="text-center">TERLALU TUA</th>
+                                                    <th class="text-center">TERLALU DEKAT</th>
+                                                    <th class="text-center">TERLALU BANYAK</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td>3272001122334455</td>
+                                                    <td>Slamet</td>
+                                                    <td>Dina</td>
+                                                    <td>Dusun Anggrek / RW 11</td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td>Implant</td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">Rendah</td>
+                                                    <td>Catatan PUS</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td>3272009988776655</td>
+                                                    <td>Hadi</td>
+                                                    <td>Yuni</td>
+                                                    <td>Dusun Mawar / RW 12</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td>Injeksi</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center"></td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center">✓</td>
+                                                    <td class="text-center">Tinggi</td>
+                                                    <td>Perlu tindak lanjut</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- Pagination -->
+                                    <div class="d-flex justify-content-end mt-3">
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination pagination-sm">
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#" tabindex="-1"
+                                                        aria-disabled="true">Previous</a>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#">Next</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <!-- Footer Start -->
@@ -479,9 +1164,16 @@
 
     <!-- App js-->
     <script src="assets/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            var bulan = document.getElementById('bulan');
+            var tahun = document.getElementById('tahun');
+            var kecamatan = document.getElementById('kecamatan');
             var kategori = document.getElementById('kategori');
+
+            var dynamicSection = document.getElementById('dynamic-section');
+            var tableKosong = document.getElementById('table-kosong');
 
             // map logical field wrappers by class name
             var fields = {
@@ -547,7 +1239,7 @@
                 Baduta: ['nik', 'nama', 'alamat', 'rt', 'no', 'uraian', 'air', 'jamban', 'pendampingan',
                     'resiko', 'keterangan'
                 ],
-                Baduta_L: ['nik', 'nama', 'alamat', 'rt', 'no', 'uraian', 'air', 'jamban', 'pendampingan',
+                Balita: ['nik', 'nama', 'alamat', 'rt', 'no', 'uraian', 'air', 'jamban', 'pendampingan',
                     'resiko', 'keterangan'
                 ],
                 PUS: ['nik', 'nama', 'namaSuami', 'alamat', 'rt', 'no', 'uraian', 'resiko', 'keterangan',
@@ -567,24 +1259,100 @@
                 // show specific section blocks when needed
                 if (cat === 'BUMIL' && sections.BUMIL) sections.BUMIL.classList.remove('d-none');
                 if ((cat === 'BULIN') && sections.BULIN) sections.BULIN.classList.remove('d-none');
-                if ((cat === 'Baduta' || cat === 'Baduta_L') && sections.Baduta) sections.Baduta.classList
-                    .remove('d-none');
+                if ((cat === 'Baduta') && sections.Baduta) sections.Baduta.classList.remove('d-none');
                 if (cat === 'PUS' && sections.PUS) sections.PUS.classList.remove('d-none');
             }
 
-            kategori.addEventListener('change', function () {
-                applyCategory(kategori.value);
+            // table mapping (category value -> table card id)
+            var tableMap = {
+                CATIN: 'table-CATIN',
+                BUMIL: 'table-BUMIL',
+                BULIN: 'table-BULIN',
+                Baduta: 'table-BADUTA',
+                Balita: 'table-BALITA',
+                PUS: 'table-PUS'
+            };
+
+            function hideAllTables() {
+                Object.keys(tableMap).forEach(function (k) {
+                    var el = document.getElementById(tableMap[k]);
+                    if (el) el.classList.add('d-none');
+                });
+            }
+
+            function updateVisibility() {
+                var allSelected = bulan && bulan.value && tahun && tahun.value && kecamatan && kecamatan
+                    .value && kategori && kategori.value;
+
+                if (allSelected) {
+                    if (dynamicSection) dynamicSection.classList.remove('d-none');
+                    applyCategory(kategori.value);
+                } else {
+                    if (dynamicSection) dynamicSection.classList.add('d-none');
+                    hideAllFields();
+                    hideAllSections();
+                }
+
+                // tables: show only the table matching selected category (only when all required selects chosen)
+                hideAllTables();
+                // If not all filters selected -> show 'kosong' message
+                if (!allSelected) {
+                    if (tableKosong) tableKosong.classList.remove('d-none');
+                } else {
+                    if (tableKosong) tableKosong.classList.add('d-none');
+                    if (kategori && kategori.value && tableMap[kategori.value]) {
+                        var tid = tableMap[kategori.value];
+                        var tEl = document.getElementById(tid);
+                        if (tEl) {
+                            // if the table has rows, show it; otherwise show the kosong card
+                            var hasRows = tEl.querySelectorAll('tbody tr').length > 0;
+                            if (hasRows) {
+                                tEl.classList.remove('d-none');
+                            } else {
+                                if (tableKosong) tableKosong.classList.remove('d-none');
+                            }
+                        } else {
+                            if (tableKosong) tableKosong.classList.remove('d-none');
+                        }
+                    } else {
+                        if (tableKosong) tableKosong.classList.remove('d-none');
+                    }
+                }
+            }
+
+            // attach change handlers
+            [bulan, tahun, kecamatan, kategori].forEach(function (el) {
+                if (el) el.addEventListener('change', updateVisibility);
             });
 
-            // initialize
-            applyCategory(kategori.value || 'CATIN');
+            // initial run
+            updateVisibility();
 
             var btn = document.getElementById('btn-simpan-design');
+            var inputNik = document.getElementById('input-nik');
             if (btn) {
                 btn.addEventListener('click', function () {
-                    alert(
-                        'Design-only: data tidak disimpan. Integrasi penyimpanan belum diimplementasikan.'
-                    );
+                    var nikVal = inputNik ? inputNik.value.trim() : '';
+                    if (!nikVal) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Data Tidak Lengkap',
+                            text: 'NIK wajib diisi, silakan lengkapi data.',
+                            confirmButtonText: 'OK'
+                        }).then(function () {
+                            if (inputNik) inputNik.focus();
+                        });
+                        return;
+                    }
+
+                    // Simulate success (design-only)
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil (simulasi)',
+                        text: 'Data tersimpan (simulasi).',
+                        timer: 1500,
+                        showConfirmButton: false
+                    });
                 });
             }
         });

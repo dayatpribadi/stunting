@@ -32,7 +32,6 @@
         }
 
         .nav-pills .nav-link {
-            border-radius: 0.6rem;
             margin-right: .5rem;
             padding: .5rem 1rem;
             color: #495057;
@@ -44,8 +43,8 @@
 
         .nav-pills .nav-link.active {
             color: #fff !important;
-            background-color: #556ee6 !important;
-            box-shadow: 0 6px 18px rgba(85, 110, 230, 0.08);
+            border-bottom: 2px solid #f59440 !important;
+            /* box-shadow: 0 6px 18px rgba(85, 110, 230, 0.08); */
         }
 
         @media (max-width: 575px) {
@@ -248,65 +247,72 @@
 
                     <div class="row">
                         <div class="col-xl-12 mb-3">
-                            <div class="d-flex flex-wrap gap-2">
+                            <div class="d-flex flex-wrap justify-content-between gap-2">
                                 <a href="create-pemantauan.html" type="button" class="btn btn-primary"><i
-                                        class="mdi mdi-plus me-2"></i>Tambah Data</a>
+                                        class="mdi mdi-plus me-2"></i>Input Data Pemantauan</a>
                                 <!-- Tambahkan Filter Kecamatan, Desa,  Periode Bulan dan Tahun -->
+                                <div>
+                                    <!-- button cetak -->
+                                    <button id="btn-cetak" class="btn btn-warning"><i
+                                            class="mdi mdi-printer me-2"></i>Cetak</button>
+
+                                </div>
                             </div>
                             <!-- Filters -->
                             <div class="row mt-3">
                                 <div class="col-12">
                                     <div class="card">
-                                        <div class="card-body d-flex flex-wrap gap-3 align-items-end">
-                                            <div style="min-width:140px;">
-                                                <label class="form-label mb-1">Tahun</label>
-                                                <select id="filter-tahun" class="form-select">
-                                                    <option value="2025">2025</option>
-                                                    <option value="2024">2024</option>
-                                                    <option value="2023">2023</option>
-                                                </select>
-                                            </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label class="form-label mb-1">Tahun</label>
+                                                    <select id="filter-tahun" class="form-select">
+                                                        <option value="2025">2025</option>
+                                                        <option value="2024">2024</option>
+                                                        <option value="2023">2023</option>
+                                                    </select>
+                                                </div>
 
-                                            <div style="min-width:140px;">
-                                                <label class="form-label mb-1">Bulan</label>
-                                                <select id="filter-bulan" class="form-select">
-                                                    <option value="1">Januari</option>
-                                                    <option value="2">Februari</option>
-                                                    <option value="3">Maret</option>
-                                                    <option value="4">April</option>
-                                                    <option value="5">Mei</option>
-                                                    <option value="6">Juni</option>
-                                                    <option value="7">Juli</option>
-                                                    <option value="8">Agustus</option>
-                                                    <option value="9">September</option>
-                                                    <option value="10">Oktober</option>
-                                                    <option value="11">November</option>
-                                                    <option value="12">Desember</option>
-                                                </select>
-                                            </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label mb-1">Bulan</label>
+                                                    <select id="filter-bulan" class="form-select">
+                                                        <option value="1">Januari</option>
+                                                        <option value="2">Februari</option>
+                                                        <option value="3">Maret</option>
+                                                        <option value="4">April</option>
+                                                        <option value="5">Mei</option>
+                                                        <option value="6">Juni</option>
+                                                        <option value="7">Juli</option>
+                                                        <option value="8">Agustus</option>
+                                                        <option value="9">September</option>
+                                                        <option value="10">Oktober</option>
+                                                        <option value="11">November</option>
+                                                        <option value="12">Desember</option>
+                                                    </select>
+                                                </div>
 
-                                            <div style="min-width:200px;">
-                                                <label class="form-label mb-1">Kecamatan</label>
-                                                <select id="filter-kecamatan" class="form-select">
-                                                    <option value="kec-a">Kecamatan A</option>
-                                                    <option value="kec-b">Kecamatan B</option>
-                                                    <option value="kec-c">Kecamatan C</option>
-                                                </select>
-                                            </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label mb-1">Kecamatan</label>
+                                                    <select id="filter-kecamatan" class="form-select">
+                                                        <option value="kec-a">Kecamatan A</option>
+                                                        <option value="kec-b">Kecamatan B</option>
+                                                        <option value="kec-c">Kecamatan C</option>
+                                                    </select>
+                                                </div>
 
-                                            <div style="min-width:200px;">
-                                                <label class="form-label mb-1">Desa / Kelurahan</label>
-                                                <select id="filter-desa" class="form-select">
-                                                    <option value="desa-1">Desa 1</option>
-                                                    <option value="desa-2">Desa 2</option>
-                                                    <option value="desa-3">Desa 3</option>
-                                                </select>
+                                                <div class="col-md-6">
+                                                    <label class="form-label mb-1">Desa / Kelurahan</label>
+                                                    <select id="filter-desa" class="form-select">
+                                                        <option value="desa-1">Desa 1</option>
+                                                        <option value="desa-2">Desa 2</option>
+                                                        <option value="desa-3">Desa 3</option>
+                                                    </select>
+                                                </div>
                                             </div>
-
-                                            <div class="ms-auto d-flex gap-2">
-                                                <button id="filter-apply" class="btn btn-primary">Apply</button>
-                                                <button id="filter-reset"
-                                                    class="btn btn-outline-secondary">Reset</button>
+                                            <div class="ms-auto d-flex gap-2 mt-md-3">
+                                                <button id="filter-apply" class="btn btn-outline-primary">Terapkan
+                                                    Pencarian</button>
+                                                <button id="filter-reset" class="btn btn-secondary">Reset</button>
                                             </div>
                                         </div>
                                     </div>
