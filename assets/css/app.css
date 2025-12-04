@@ -9949,6 +9949,10 @@ fieldset:disabled .btn {
   background-size: cover !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
+  /* Use path relative to this CSS file (assets/css -> assets/images) */
+  background-image: url('../images/stunting.jpg') !important;
+  /* Ensure element has height so background is visible */
+  min-height: 220px;
 }
 
 .user-select-all {
