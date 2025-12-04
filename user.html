@@ -286,7 +286,7 @@
             <!-- Modals Add-->
             <div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog"
                 aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title">Tambah Pengguna</h5>
@@ -295,63 +295,67 @@
                         </div>
                         <div class="modal-body">
                             <form>
-                                <div class="mb-3">
-                                    <label for="userNama" class="form-label">Nama Pengguna</label>
-                                    <input type="text" class="form-control" id="userNama"
-                                        placeholder="Masukkan Nama Pengguna">
-                                </div>
+                                <div class="row g-2">
+                                    <div class="col-12 mb-3">
+                                        <label for="userNama" class="form-label">Nama Pengguna</label>
+                                        <input type="text" class="form-control" id="userNama"
+                                            placeholder="Masukkan Nama Pengguna">
+                                    </div>
 
-                                <!-- Pilih Kecamatan -->
-                                <div class="mb-3">
-                                    <label for="userWilayah" class="form-label">Wilayah Pemantauan</label>
-                                    <select class="form-select" id="userWilayah">
-                                        <option selected>Pilih Kecamatan</option>
-                                        <option value="1">Kecamatan Kandis</option>
-                                        <option value="2">Kecamatan Tanjung Batu</option>
-                                        <option value="3">Kecamatan Payaraman</option>
-                                    </select>
-                                </div>
+                                    <!-- Pilih Kecamatan -->
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="userWilayah" class="form-label">Wilayah Pemantauan</label>
+                                        <select class="form-select" id="userWilayah">
+                                            <option selected>Pilih Kecamatan</option>
+                                            <option value="1">Kecamatan Kandis</option>
+                                            <option value="2">Kecamatan Tanjung Batu</option>
+                                            <option value="3">Kecamatan Payaraman</option>
+                                        </select>
+                                    </div>
 
-                                <!-- Pilih Desa/Kelurahan -->
-                                <div class="mb-3">
-                                    <label for="userDesa" class="form-label">Desa/Kelurahan</label>
-                                    <select class="form-select" id="userDesa">
-                                        <option selected>Pilih Desa/Kelurahan</option>
-                                        <option value="1">Desa Sukajadi</option>
-                                        <option value="2">Desa Mekar Jaya</option>
-                                        <option value="3">Desa Tanjung Baru</option>
-                                    </select>
-                                </div>
+                                    <!-- Pilih Desa/Kelurahan -->
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="userDesa" class="form-label">Desa/Kelurahan</label>
+                                        <select class="form-select" id="userDesa">
+                                            <option selected>Pilih Desa/Kelurahan</option>
+                                            <option value="1">Desa Sukajadi</option>
+                                            <option value="2">Desa Mekar Jaya</option>
+                                            <option value="3">Desa Tanjung Baru</option>
+                                        </select>
+                                    </div>
 
-                                <div class="mb-3">
-                                    <label for="userEmail" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="userEmail"
-                                        placeholder="Masukkan Email">
-                                </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="userEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="userEmail"
+                                            placeholder="Masukkan Email">
+                                    </div>
 
-                                <div class="mb-3">
-                                    <label for="userHp" class="form-label">Hp/Telp</label>
-                                    <input type="text" class="form-control" id="userHp" placeholder="Masukkan Hp/Telp">
-                                </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="userHp" class="form-label">Hp/Telp</label>
+                                        <input type="text" class="form-control" id="userHp"
+                                            placeholder="Masukkan Hp/Telp">
+                                    </div>
 
-                                <div class="mb-3">
-                                    <label for="userUsername" class="form-label">Username</label>
-                                    <input type="text" class="form-control" id="userUsername"
-                                        placeholder="Masukkan Username">
-                                </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="userUsername" class="form-label">Username</label>
+                                        <input type="text" class="form-control" id="userUsername"
+                                            placeholder="Masukkan Username">
+                                    </div>
 
-                                <div class="mb-3">
-                                    <label for="userPassword" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="userPassword"
-                                        placeholder="Masukkan Password">
-                                </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="userPassword" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="userPassword"
+                                            placeholder="Masukkan Password">
+                                    </div>
 
-                                <!-- Toogle switch active -->
-                                <div class="mb-3">
-                                    <label class="form-label">Status</label>
-                                    <div>
-                                        <input type="checkbox" id="switch1" switch="bool" checked />
-                                        <label for="switch1" data-on-label="Aktif" data-off-label="Non-Aktif"></label>
+                                    <!-- Toogle switch active -->
+                                    <div class="mb-3">
+                                        <label class="form-label">Status</label>
+                                        <div>
+                                            <input type="checkbox" id="switch1" switch="bool" checked />
+                                            <label for="switch1" data-on-label="Aktif"
+                                                data-off-label="Non-Aktif"></label>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
