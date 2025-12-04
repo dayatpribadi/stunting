@@ -9945,6 +9945,12 @@ fieldset:disabled .btn {
   background-image: var(--bs-gradient) !important;
 }
 
+.bg-img-fluid {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
 .user-select-all {
   -webkit-user-select: all !important;
   user-select: all !important;
