@@ -253,14 +253,11 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
-                                                    <th scope="col">Nama TPK</th>
                                                     <th scope="col">Kecamatan</th>
                                                     <th scope="col">Desa/Kelurahan</th>
                                                     <th scope="col">Nama Bidan Desa</th>
                                                     <th scope="col">Nama PKK Desa</th>
                                                     <th scope="col">Nama Kader KB</th>
-                                                    <th scope="col">Hp/Telp</th>
-                                                    <th scope="col">Alamat</th>
                                                     <th scope="col">Status</th>
                                                     <th scope="col">Aksi</th>
                                                 </tr>
@@ -268,17 +265,20 @@
                                             <tbody>
                                                 <tr>
                                                     <th scope="row">1</th>
-                                                    <td>Warren Jackson</td>
-                                                    <td>Kecamatan A</td>
-                                                    <td>Desa/Kelurahan A</td>
+                                                    <td>Indralaya</td>
+                                                    <td>Kelurahan Indralaya Mulia</td>
                                                     <td>Maria Sari</td>
                                                     <td>Siti Aminah</td>
                                                     <td>Rina Lestari</td>
-                                                    <td>081234567890</td>
-                                                    <td>Jl. Merdeka No. 123</td>
                                                     <!-- badge -->
                                                     <td><span class="badge bg-success">Active</span></td>
                                                     <td>
+                                                        <!-- modal detail -->
+                                                        <a href="#!" data-bs-toggle="modal"
+                                                            data-bs-target=".bs-example-modal-center-detail"
+                                                            class="btn btn-sm btn-info" title="Detail Data">
+                                                            <i class="mdi mdi-eye"></i>
+                                                        </a>
                                                         <a href="#!" data-bs-toggle="modal"
                                                             data-bs-target=".bs-example-modal-center-edit"
                                                             class="btn btn-sm btn-primary" title="Edit Data">
@@ -440,14 +440,6 @@
                         <div class="modal-body">
                             <form>
                                 <div class="row g-2">
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="timTPKNama" class="form-label">Nama Tim TPK</label>
-                                            <input type="text" class="form-control" id="timTPKNama"
-                                                placeholder="Masukkan Nama Tim TPK">
-                                        </div>
-                                    </div>
-
                                     <div class="col-12 col-md-6">
                                         <div class="mb-3">
                                             <label for="timTPKKecamatan" class="form-label">Kecamatan</label>
@@ -482,11 +474,28 @@
                                         </div>
                                     </div>
 
+                                    <!-- No HP Bidan Desa -->
+                                    <div class="col-12 col-md-6">
+                                        <div class="mb-3">
+                                            <label for="bidanHP" class="form-label">Hp/Telp</label>
+                                            <input type="text" class="form-control" id="bidanHP"
+                                                placeholder="Masukkan Hp/Telp">
+                                        </div>
+                                    </div>
+
                                     <div class="col-12 col-md-6">
                                         <div class="mb-3">
                                             <label for="timTPKPkk" class="form-label">Nama PKK Desa</label>
                                             <input type="text" class="form-control" id="timTPKPkk"
                                                 placeholder="Masukkan Nama PKK Desa">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-6">
+                                        <div class="mb-3">
+                                            <label for="timTPKHp" class="form-label">Hp/Telp</label>
+                                            <input type="text" class="form-control" id="timTPKHp"
+                                                placeholder="Masukkan Hp/Telp">
                                         </div>
                                     </div>
 
@@ -500,17 +509,9 @@
 
                                     <div class="col-12 col-md-6">
                                         <div class="mb-3">
-                                            <label for="timTPKHp" class="form-label">Hp/Telp</label>
-                                            <input type="text" class="form-control" id="timTPKHp"
+                                            <label for="kadeHP" class="form-label">Hp/Telp</label>
+                                            <input type="text" class="form-control" id="kadeHP"
                                                 placeholder="Masukkan Hp/Telp">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="timTPKAlamat" class="form-label">Alamat</label>
-                                            <textarea class="form-control" id="timTPKAlamat" rows="3"
-                                                placeholder="Masukkan Alamat"></textarea>
                                         </div>
                                     </div>
 
@@ -529,7 +530,72 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tutup</button>
-                            <button type="button" class="btn btn-primary">Simpan</button>
+                            <button type="button" class="btn btn-primary">Simpan Perubahan</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div>
+
+            <!-- modal detail -->
+            <div class="modal fade bs-example-modal-center-detail" tabindex="-1" role="dialog"
+                aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Detail Tim TPK</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th>Kecamatan</th>
+                                        <td>Indralaya</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Desa/Kelurahan</th>
+                                        <td>Kelurahan Indralaya Mulia</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Nama Bidan Desa</th>
+                                        <td>
+                                            <div class="d-flex justify-content-between">
+                                                Maria Sari
+                                                <span class="badge bg-primary ml-3"><i class="mdi mdi-whatsapp"></i>
+                                                    081234567890</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Nama PKK Desa</th>
+                                        <td>
+                                            <div class="d-flex justify-content-between">
+                                                Siti Aminah
+                                                <span class="badge bg-primary ml-3"><i class="mdi mdi-whatsapp"></i>
+                                                    081234562222</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Nama Kader KB</th>
+                                        <td>
+                                            <div class="d-flex justify-content-between">
+                                                Rina Lestari
+                                                <span class="badge bg-primary ml-3"><i class="mdi mdi-whatsapp"></i>
+                                                    081234563131</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Status</th>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tutup</button>
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
