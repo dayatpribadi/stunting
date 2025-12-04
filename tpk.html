@@ -129,7 +129,7 @@
                             <div class="collapse" id="sidebarDashboards">
                                 <ul class="nav-second-level">
                                     <li>
-                                        <a href="user.html" class="tp-link">User</a>
+                                        <a href="user.html" class="tp-link">Pengguna</a>
                                     </li>
                                     <li>
                                         <a href="tpk.html" class="tp-link">TPK</a>
@@ -149,8 +149,6 @@
                                     <li>
                                         <a href="kategori.html" class="tp-link">Kategori</a>
                                     </li>
-                                    <li>
-                                        <a href="wilayah.html" class="tp-link">Wilayah</a>
                                 </ul>
                             </div>
                         </li>
@@ -240,7 +238,8 @@
                                 </div>
 
                                 <button type="button" class="btn btn-primary text-end" data-bs-toggle="modal"
-                                    data-bs-target=".bs-example-modal-center">Tambah Data TPK</button>
+                                    data-bs-target=".bs-example-modal-center"><i class="mdi mdi-plus me-2"></i>Tambah
+                                    Data TPK</button>
                             </div>
                         </div>
                     </div>
@@ -332,14 +331,6 @@
                         <div class="modal-body">
                             <form>
                                 <div class="row g-2">
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="timTPKNama" class="form-label">Nama Tim TPK</label>
-                                            <input type="text" class="form-control" id="timTPKNama"
-                                                placeholder="Masukkan Nama Tim TPK">
-                                        </div>
-                                    </div>
-
                                     <div class="col-12 col-md-6">
                                         <div class="mb-3">
                                             <label for="timTPKKecamatan" class="form-label">Kecamatan</label>
@@ -374,11 +365,28 @@
                                         </div>
                                     </div>
 
+                                    <!-- No HP Bidan Desa -->
+                                    <div class="col-12 col-md-6">
+                                        <div class="mb-3">
+                                            <label for="bidanHP" class="form-label">Hp/Telp</label>
+                                            <input type="text" class="form-control" id="bidanHP"
+                                                placeholder="Masukkan Hp/Telp">
+                                        </div>
+                                    </div>
+
                                     <div class="col-12 col-md-6">
                                         <div class="mb-3">
                                             <label for="timTPKPkk" class="form-label">Nama PKK Desa</label>
                                             <input type="text" class="form-control" id="timTPKPkk"
                                                 placeholder="Masukkan Nama PKK Desa">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-6">
+                                        <div class="mb-3">
+                                            <label for="timTPKHp" class="form-label">Hp/Telp</label>
+                                            <input type="text" class="form-control" id="timTPKHp"
+                                                placeholder="Masukkan Hp/Telp">
                                         </div>
                                     </div>
 
@@ -392,17 +400,9 @@
 
                                     <div class="col-12 col-md-6">
                                         <div class="mb-3">
-                                            <label for="timTPKHp" class="form-label">Hp/Telp</label>
-                                            <input type="text" class="form-control" id="timTPKHp"
+                                            <label for="kadeHP" class="form-label">Hp/Telp</label>
+                                            <input type="text" class="form-control" id="kadeHP"
                                                 placeholder="Masukkan Hp/Telp">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="timTPKAlamat" class="form-label">Alamat</label>
-                                            <textarea class="form-control" id="timTPKAlamat" rows="3"
-                                                placeholder="Masukkan Alamat"></textarea>
                                         </div>
                                     </div>
 

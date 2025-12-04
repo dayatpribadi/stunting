@@ -129,7 +129,7 @@
                             <div class="collapse" id="sidebarDashboards">
                                 <ul class="nav-second-level">
                                     <li>
-                                        <a href="user.html" class="tp-link">User</a>
+                                        <a href="user.html" class="tp-link">Pengguna</a>
                                     </li>
                                     <li>
                                         <a href="tpk.html" class="tp-link">TPK</a>
@@ -149,8 +149,6 @@
                                     <li>
                                         <a href="kategori.html" class="tp-link">Kategori</a>
                                     </li>
-                                    <li>
-                                        <a href="wilayah.html" class="tp-link">Wilayah</a>
                                 </ul>
                             </div>
                         </li>
@@ -215,7 +213,8 @@
                         <div class="col-xl-12 mb-3">
                             <div class="d-flex flex-wrap gap-2">
                                 <button type="button" class="btn btn-primary " data-bs-toggle="modal"
-                                    data-bs-target=".bs-example-modal-center">Tambah Pengguna</button>
+                                    data-bs-target=".bs-example-modal-center"><i class="mdi mdi-plus me-2"></i>Tambah
+                                    Pengguna</button>
                             </div>
                         </div>
                         <div class="col-xl-12">
@@ -235,8 +234,10 @@
                                             <tbody>
                                                 <tr>
                                                     <th scope="row">1</th>
-                                                    <td>Warren Jackson</td>
-                                                    <td>Kecamatan Kandis</td>
+                                                    <td>Warren Jackson <br>
+                                                        <small class="text-muted"><i>081590901234</i></small></td>
+                                                    <td>Kecamatan Kandis <br>
+                                                        <small class="text-muted"><i>Desa Sukajadi</i></small></td>
                                                     <!-- badge -->
                                                     <td><span class="badge bg-success">Active</span></td>
                                                     <td>
@@ -308,6 +309,17 @@
                                         <option value="1">Kecamatan Kandis</option>
                                         <option value="2">Kecamatan Tanjung Batu</option>
                                         <option value="3">Kecamatan Payaraman</option>
+                                    </select>
+                                </div>
+
+                                <!-- Pilih Desa/Kelurahan -->
+                                <div class="mb-3">
+                                    <label for="userDesa" class="form-label">Desa/Kelurahan</label>
+                                    <select class="form-select" id="userDesa">
+                                        <option selected>Pilih Desa/Kelurahan</option>
+                                        <option value="1">Desa Sukajadi</option>
+                                        <option value="2">Desa Mekar Jaya</option>
+                                        <option value="3">Desa Tanjung Baru</option>
                                     </select>
                                 </div>
 
