@@ -214,299 +214,335 @@
                     <!-- FORM INPUT PEMANTAUAN -->
                     <div class="row mt-3">
                         <div class="col-xl-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <form id="form-pemantauan" class="row g-3">
-                                        <!-- WAJIB PILIH Bulan Tahun Pemantauan, Kecamatan dan Kategori -->
-                                        <div class="card-header p-3 bg-primary rounded-top bg-opacity-10 mb-3">
-                                            <div class="row">
-                                                <div class="col-xl-4">
-                                                    <label class="form-label">Bulan dan Tahun Pemantauan</label>
-                                                    <div class="d-flex justify-content-between gap-2">
-                                                        <select id="bulan" class="form-select w-100">
-                                                            <option value="">Pilih Bulan...</option>
-                                                            <option value="01">Januari</option>
-                                                            <option value="02">Februari</option>
-                                                            <option value="03">Maret</option>
-                                                            <option value="04">April</option>
-                                                            <option value="05">Mei</option>
-                                                            <option value="06">Juni</option>
-                                                            <option value="07">Juli</option>
-                                                            <option value="08">Agustus</option>
-                                                            <option value="09">September</option>
-                                                            <option value="10">Oktober</option>
-                                                            <option value="11">November</option>
-                                                            <option value="12">Desember</option>
-                                                        </select>
-                                                        <select id="tahun" class="form-select w-100">
-                                                            <option value="">Pilih Tahun...</option>
-                                                            <option value="2022">2022</option>
-                                                            <option value="2023">2023</option>
-                                                            <option value="2024">2024</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-4">
-                                                    <!-- Kecamatan Pemantauan -->
-                                                    <label class="form-label">Kecamatan Pemantauan</label>
-                                                    <select id="kecamatan" class="form-select">
-                                                        <option value="">Pilih Kecamatan...</option>
-                                                        <option value="Kec A">Kecamatan A</option>
-                                                        <option value="Kec B">Kecamatan B</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-xl-4">
-                                                    <label class="form-label">Kategori</label>
-                                                    <select id="kategori" class="form-select">
-                                                        <option value="CATIN">Calon Pengantin (CATIN)</option>
-                                                        <option value="BUMIL">Ibu Hamil (BUMIL)</option>
-                                                        <option value="BULIN">Ibu Bersalin (BULIN)</option>
-                                                        <option value="Baduta">Baduta (Bayi &lt;2 Th)</option>
-                                                        <option value="Balita">Balita (Bayi &lt;5 Th)</option>
-                                                        <option value="PUS">PUS (Pasangan Usia Subur)</option>
-                                                    </select>
-                                                </div>
+                            <form id="form-pemantauan">
+                                <!-- WAJIB PILIH Bulan Tahun Pemantauan, Kecamatan dan Kategori -->
+                                <div class="card-header p-3 bg-primary rounded-top bg-opacity-10">
+                                    <div class="row">
+                                        <div class="col-xl-4">
+                                            <label class="form-label">Bulan dan Tahun Pemantauan</label>
+                                            <div class="d-flex justify-content-between gap-2">
+                                                <select id="bulan" class="form-select w-100">
+                                                    <option value="">Pilih Bulan...</option>
+                                                    <option value="01">Januari</option>
+                                                    <option value="02">Februari</option>
+                                                    <option value="03">Maret</option>
+                                                    <option value="04">April</option>
+                                                    <option value="05">Mei</option>
+                                                    <option value="06">Juni</option>
+                                                    <option value="07">Juli</option>
+                                                    <option value="08">Agustus</option>
+                                                    <option value="09">September</option>
+                                                    <option value="10">Oktober</option>
+                                                    <option value="11">November</option>
+                                                    <option value="12">Desember</option>
+                                                </select>
+                                                <select id="tahun" class="form-select w-100">
+                                                    <option value="">Pilih Tahun...</option>
+                                                    <option value="2026">2026</option>
+                                                    <option value="2025">2025</option>
+                                                    <option value="2024">2024</option>
+                                                </select>
                                             </div>
                                         </div>
+                                        <div class="col-xl-4">
+                                            <!-- Kecamatan Pemantauan -->
+                                            <label class="form-label">Kecamatan Pemantauan</label>
+                                            <select id="kecamatan" class="form-select">
+                                                <option value="">Pilih Kecamatan...</option>
+                                                <option value="Kec A">Kecamatan A</option>
+                                                <option value="Kec B">Kecamatan B</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xl-4">
+                                            <label class="form-label">Kategori</label>
+                                            <select id="kategori" class="form-select">
+                                                <option value="">Pilih Kategori...</option>
+                                                <option value="CATIN">Calon Pengantin (CATIN)</option>
+                                                <option value="BUMIL">Ibu Hamil (BUMIL)</option>
+                                                <option value="BULIN">Ibu Bersalin (BULIN)</option>
+                                                <option value="Baduta">Baduta (Bayi &lt;2 Th)</option>
+                                                <option value="Balita">Balita (Bayi &lt;5 Th)</option>
+                                                <option value="PUS">PUS (Pasangan Usia Subur)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                        <!-- FORM ISIAN DINAMIS MULAI COLLAPSE -->
-                                        <div id="dynamic-section" class="row g-3 d-none">
-                                            <div class="col-md-4 field-nik">
-                                                <label class="form-label">NIK</label>
-                                                <div class="input-group">
-                                                    <input id="input-nik" type="text" class="form-control"
-                                                        placeholder="Cari NIK dari database sidesi ...">
-                                                    <button class="btn btn-primary" type="button" id="btn-search-nik">
-                                                        <i class="mdi mdi-magnify"></i>
-                                                    </button>
-                                                </div>
+                                <!-- FORM ISIAN DINAMIS MULAI COLLAPSE -->
+                                <div id="dynamic-section" class="d-none">
+                                    <!-- data pribadi -->
+                                    <div class="row mt-3">
+                                        <div class="col-xl-12">
+                                            <h5>Data Pribadi Sasaran</h5>
+                                            <div class="alert alert-warning" role="alert">
+                                                <i class="mdi mdi-information-outline me-2"></i>
+                                                Pastikan data sasaran sesuai dengan database SIDESI.
                                             </div>
-                                            <div class="col-md-4 field-nama">
-                                                <label class="form-label">Nama Sasaran</label>
-                                                <input type="text" class="form-control" placeholder="Nama" disabled>
-                                            </div>
-                                            <div class="col-md-4 field-nama-suami">
-                                                <label class="form-label">Nama Suami / Pasangan</label>
-                                                <input type="text" class="form-control" placeholder="(opsional)"
-                                                    disabled>
-                                            </div>
-
-                                            <div class="col-md-4 field-alamat">
-                                                <label class="form-label">Dusun / RW</label>
-                                                <input type="text" class="form-control" placeholder="Dusun / RW"
-                                                    disabled>
-                                            </div>
-                                            <div class="col-md-2 field-rt">
-                                                <label class="form-label">RT</label>
-                                                <input type="text" class="form-control" placeholder="RT" disabled>
-                                            </div>
-                                            <div class="col-md-2 field-no">
-                                                <label class="form-label">No. Rumah</label>
-                                                <input type="text" class="form-control" placeholder="Nomor" disabled>
-                                            </div>
-
-                                            <div class="col-12 field-uraian">
-                                                <label class="form-label">Uraian Keadaan Sasaran (Hasil Pemeriksaan
-                                                    Kesehatan)</label>
-                                                <textarea class="form-control" rows="3"
-                                                    placeholder="Ringkasan hasil pemeriksaan"></textarea>
-                                            </div>
-
-                                            <!-- Pemeriksaan -->
-                                            <div class="col-md-3 field-pemeriksaan">
-                                                <label class="form-label">Pemeriksaan - Layak</label>
-                                                <select class="form-select">
-                                                    <option value="">Pilih...</option>
-                                                    <option value="layak">Layak</option>
-                                                    <option value="tidak">Tidak</option>
-                                                </select>
-                                            </div>
-
-                                            <!-- Lingkungan -->
-                                            <div class="col-md-3 field-air">
-                                                <label class="form-label">Sumber Air Minum</label>
-                                                <input type="text" class="form-control"
-                                                    placeholder="Contoh: PDAM / Sumur">
-                                            </div>
-                                            <div class="col-md-3 field-jamban">
-                                                <label class="form-label">Jamban</label>
-                                                <select class="form-select">
-                                                    <option value="">Pilih...</option>
-                                                    <option value="layak">Layak</option>
-                                                    <option value="tidak">Tidak Layak</option>
-                                                </select>
-                                            </div>
-
-                                            <!-- Pendampingan -->
-                                            <div class="col-md-3 field-pendampingan">
-                                                <label class="form-label">Pendampingan Dilakukan</label>
-                                                <!-- Dropdown Data Pendampingan -->
-                                                <select class="form-select">
-                                                    <option value="">Pilih...</option>
-                                                    <option value="ya">Edukasi dan konseling</option>
-                                                    <option value="tidak">Identifikasi faktor risiko stunting pada
-                                                        keluarga
-                                                    </option>
-                                                </select>
-                                            </div>
-
-                                            <div class="col-md-3 field-resiko">
-                                                <label class="form-label">Resiko</label>
-                                                <select class="form-select">
-                                                    <option>Rendah</option>
-                                                    <option>Sedang</option>
-                                                    <option>Tinggi</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="col-12 field-keterangan">
-                                                <label class="form-label">Keterangan</label>
-                                                <input type="text" class="form-control"
-                                                    placeholder="Keterangan / catatan">
-                                            </div>
-
-                                            <!-- Category specific sections (hidden by default) -->
-                                            <div id="section-BUMIL" class="category-section d-none">
-                                                <hr>
-                                                <h5>Data khusus BUMIL</h5>
-                                                <div class="row g-3">
-                                                    <div class="col-md-6">
-                                                        <label class="form-label">Hari Pertama Haid Terakhir</label>
-                                                        <input type="date" class="form-control">
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label class="form-label">Taksiran Persalinan</label>
-                                                        <input type="date" class="form-control">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div id="section-BULIN" class="category-section d-none">
-                                                <hr>
-                                                <h5>Data khusus BULIN</h5>
-                                                <div class="row g-3">
-                                                    <div class="col-md-6">
-                                                        <label class="form-label">KB Pasca Persalinan (Jenis
-                                                            Kontrasepsi)</label>
-                                                        <input type="text" class="form-control"
-                                                            placeholder="Contoh: Implant / Injeksi">
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label class="form-label">ASI Eksklusif</label>
-                                                        <select class="form-select">
-                                                            <option>YA</option>
-                                                            <option>TIDAK</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div id="section-Baduta" class="category-section d-none">
-                                                <hr>
-                                                <h5>Data khusus Baduta</h5>
-                                                <div class="row g-3">
-                                                    <div class="col-md-4">
-                                                        <label class="form-label">Berat Lahir / Catatan</label>
-                                                        <input type="text" class="form-control"
-                                                            placeholder="BB lahir / catatan">
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label class="form-label">ASI Eksklusif</label>
-                                                        <select class="form-select">
-                                                            <option>YA</option>
-                                                            <option>TIDAK</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div id="section-PUS" class="category-section d-none">
-                                                <hr>
-                                                <h5>Data khusus PUS</h5>
-                                                <div class="row g-3">
-                                                    <div class="col-md-3">
-                                                        <label class="form-label">Status Kepesertaan KB</label>
-                                                        <select class="form-select">
-                                                            <option>YA</option>
-                                                            <option>TIDAK</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <label class="form-label">Metode Kontrasepsi</label>
-                                                        <input type="text" class="form-control"
-                                                            placeholder="Contoh: Implant">
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <label class="form-label">Kepesertaan JKN PBI</label>
-                                                        <select class="form-select">
-                                                            <option>YA</option>
-                                                            <option>TIDAK</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <label class="form-label">Bantuan Sosial (Jenis)</label>
-                                                        <input type="text" class="form-control"
-                                                            placeholder="Contoh: BPNT">
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <label class="form-label">PUS 4 - Risiko Spesifik</label>
-                                                        <div class="d-flex flex-wrap gap-2">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    id="pus_muda">
-                                                                <label class="form-check-label" for="pus_muda">Terlalu
-                                                                    muda
-                                                                    (&lt;20)</label>
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-md-4 mb-2 field-nik">
+                                                            <label class="form-label">NIK</label>
+                                                            <div class="input-group">
+                                                                <input id="input-nik" type="text" class="form-control"
+                                                                    placeholder="Cari NIK dari database sidesi ...">
+                                                                <button class="btn btn-primary" type="button"
+                                                                    id="btn-search-nik">
+                                                                    <i class="mdi mdi-magnify"></i>
+                                                                </button>
                                                             </div>
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    id="pus_tua">
-                                                                <label class="form-check-label" for="pus_tua">Terlalu
-                                                                    tua
-                                                                    (35-40)</label>
-                                                            </div>
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    id="pus_dekat">
-                                                                <label class="form-check-label" for="pus_dekat">Terlalu
-                                                                    dekat (&lt;2 th)</label>
-                                                            </div>
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    id="pus_banyak">
-                                                                <label class="form-check-label" for="pus_banyak">Terlalu
-                                                                    banyak (>=3 anak)</label>
-                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4 mb-2 field-nama">
+                                                            <label class="form-label">Nama Sasaran</label>
+                                                            <input type="text" class="form-control" placeholder="Nama"
+                                                                disabled>
+                                                        </div>
+                                                        <div class="col-md-4 mb-2 field-nama-suami">
+                                                            <label class="form-label">Nama Suami / Pasangan</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder="(opsional)" disabled>
+                                                        </div>
+                                                        <div class="col-md-2 mb-2 field-no">
+                                                            <label class="form-label">No. Rumah</label>
+                                                            <input type="text" class="form-control" placeholder="Nomor"
+                                                                disabled>
+                                                        </div>
+
+                                                        <div class="col-md-2 field-rt">
+                                                            <label class="form-label">RT</label>
+                                                            <input type="text" class="form-control" placeholder="RT"
+                                                                disabled>
+                                                        </div>
+                                                        <div class="col-md-4 field-alamat">
+                                                            <label class="form-label">RW</label>
+                                                            <input type="text" class="form-control" placeholder="RW"
+                                                                disabled>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- FORM ISIAN DINAMIS AKHIR -->
-                                            <div class="col-12">
-                                                <div class="d-flex justify-content-end gap-2">
-                                                    <a href="form-pemantauan.html" class="btn btn-secondary">Batal</a>
-                                                    <button type="button" id="btn-simpan-design"
-                                                        class="btn btn-primary">Simpan Data</button>
+                                        </div>
+                                    </div>
+                                    <!-- data pribadi end -->
+
+
+                                    <!-- data pemantauan -->
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h5>Data Hasil Pemantauan</h5>
+                                                    <div class="row">
+                                                        <div class="col-12 mb-2 field-uraian">
+                                                            <label class="form-label">Uraian Keadaan Sasaran (Hasil
+                                                                Pemeriksaan
+                                                                Kesehatan)</label>
+                                                            <textarea class="form-control" rows="3"
+                                                                placeholder="Ringkasan hasil pemeriksaan"></textarea>
+                                                        </div>
+
+                                                        <!-- Pemeriksaan -->
+                                                        <div class="col-md-3 mb-2 field-pemeriksaan">
+                                                            <label class="form-label">Pemeriksaan - Layak</label>
+                                                            <select class="form-select">
+                                                                <option value="">Pilih...</option>
+                                                                <option value="layak">Layak</option>
+                                                                <option value="tidak">Tidak</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <!-- Lingkungan -->
+                                                        <div class="col-md-3 mb-2 field-air">
+                                                            <label class="form-label">Sumber Air Minum</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Contoh: PDAM / Sumur">
+                                                        </div>
+
+                                                        <div class="col-md-3 mb-2 field-jamban">
+                                                            <label class="form-label">Jamban</label>
+                                                            <select class="form-select">
+                                                                <option value="">Pilih...</option>
+                                                                <option value="layak">Layak</option>
+                                                                <option value="tidak">Tidak Layak</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <!-- Pendampingan -->
+                                                        <div class="col-md-3 mb-2 field-pendampingan">
+                                                            <label class="form-label">Pendampingan Dilakukan</label>
+                                                            <!-- Dropdown Data Pendampingan -->
+                                                            <select class="form-select">
+                                                                <option value="">Pilih...</option>
+                                                                <option value="ya">Edukasi dan konseling</option>
+                                                                <option value="tidak">Identifikasi faktor risiko
+                                                                    stunting
+                                                                    pada
+                                                                    keluarga
+                                                                </option>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="col-md-3 mb-2 field-resiko">
+                                                            <label class="form-label">Resiko</label>
+                                                            <select class="form-select">
+                                                                <option>Rendah</option>
+                                                                <option>Sedang</option>
+                                                                <option>Tinggi</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="col-12 mb-2 field-keterangan">
+                                                            <label class="form-label">Keterangan</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Keterangan / catatan">
+                                                        </div>
+
+                                                        <!-- Category specific sections (hidden by default) -->
+                                                        <div id="section-BUMIL"
+                                                            class="category-section d-none mt-3 mb-2">
+                                                            <h5>Data khusus BUMIL</h5>
+                                                            <div class="row g-3">
+                                                                <div class="col-md-6 mb-2">
+                                                                    <label class="form-label">Hari Pertama Haid
+                                                                        Terakhir</label>
+                                                                    <input type="date" class="form-control">
+                                                                </div>
+                                                                <div class="col-md-6 mb-2">
+                                                                    <label class="form-label">Taksiran
+                                                                        Persalinan</label>
+                                                                    <input type="date" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div id="section-BULIN"
+                                                            class="category-section d-none mt-3 mb-2">
+                                                            <h5>Data khusus BULIN</h5>
+                                                            <div class="row g-3">
+                                                                <div class="col-md-6 mb-2">
+                                                                    <label class="form-label">KB Pasca Persalinan (Jenis
+                                                                        Kontrasepsi)</label>
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Contoh: Implant / Injeksi">
+                                                                </div>
+                                                                <div class="col-md-6 mb-2">
+                                                                    <label class="form-label">ASI Eksklusif</label>
+                                                                    <select class="form-select">
+                                                                        <option>YA</option>
+                                                                        <option>TIDAK</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div id="section-Baduta"
+                                                            class="category-section d-none mt-3 mb-2">
+                                                            <h5>Data khusus Baduta</h5>
+                                                            <div class="row g-3">
+                                                                <div class="col-md-4 mb-2">
+                                                                    <label class="form-label">Berat Lahir /
+                                                                        Catatan</label>
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="BB lahir / catatan">
+                                                                </div>
+                                                                <div class="col-md-4 mb-2">
+                                                                    <label class="form-label">ASI Eksklusif</label>
+                                                                    <select class="form-select">
+                                                                        <option>YA</option>
+                                                                        <option>TIDAK</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div id="section-PUS" class="category-section d-none mt-3 mb-2">
+                                                            <h5>Data khusus PUS</h5>
+                                                            <div class="row g-3">
+                                                                <div class="col-md-3">
+                                                                    <label class="form-label">Status Kepesertaan
+                                                                        KB</label>
+                                                                    <select class="form-select">
+                                                                        <option>YA</option>
+                                                                        <option>TIDAK</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <label class="form-label">Metode Kontrasepsi</label>
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Contoh: Implant">
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <label class="form-label">Kepesertaan JKN
+                                                                        PBI</label>
+                                                                    <select class="form-select">
+                                                                        <option>YA</option>
+                                                                        <option>TIDAK</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <label class="form-label">Bantuan Sosial
+                                                                        (Jenis)</label>
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Contoh: BPNT">
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <label class="form-label">PUS 4 - Risiko
+                                                                        Spesifik</label>
+                                                                    <div class="d-flex flex-wrap gap-2">
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="pus_muda">
+                                                                            <label class="form-check-label"
+                                                                                for="pus_muda">Terlalu
+                                                                                muda
+                                                                                (&lt;20)</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="pus_tua">
+                                                                            <label class="form-check-label"
+                                                                                for="pus_tua">Terlalu
+                                                                                tua
+                                                                                (35-40)</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="pus_dekat">
+                                                                            <label class="form-check-label"
+                                                                                for="pus_dekat">Terlalu
+                                                                                dekat (&lt;2 th)</label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="pus_banyak">
+                                                                            <label class="form-check-label"
+                                                                                for="pus_banyak">Terlalu
+                                                                                banyak (>=3 anak)</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- FORM ISIAN DINAMIS AKHIR -->
+                                                <div class="col-12 p-3 d-flex justify-content-end">
+                                                    <div class="d-flex justify-content-end gap-2">
+                                                        <a href="form-pemantauan.html"
+                                                            class="btn btn-secondary">Batal</a>
+                                                        <button type="button" id="btn-simpan-design"
+                                                            class="btn btn-primary"><i class="mdi mdi-content-save"></i>
+                                                            Simpan
+                                                            Data</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-12 d-none" id="table-kosong">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="text-center py-5">
-                                        <i class="mdi mdi-database-remove-outline fs-1 text-muted mb-3"></i>
-                                        <h5 class="mb-2">Data Tidak Ditemukan</h5>
-                                        <p class="text-muted mb-4">Silakan sesuaikan filter pencarian Anda dan coba
-                                            lagi.</p>
                                     </div>
+                                    <!-- data pemantauan end -->
                                 </div>
-                            </div>
+                            </form>
+
                         </div>
                     </div>
 
@@ -1123,6 +1159,18 @@
                         </div>
                     </div>
 
+                    <div class="col-xl-12 d-none" id="table-kosong">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="text-center py-5">
+                                    <i class="mdi mdi-database-remove-outline fs-1 text-muted mb-3"></i>
+                                    <h5 class="mb-2">Data Tidak Ditemukan</h5>
+                                    <p class="text-muted mb-4">Silakan sesuaikan filter pencarian Anda dan coba
+                                        lagi.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Footer Start -->
